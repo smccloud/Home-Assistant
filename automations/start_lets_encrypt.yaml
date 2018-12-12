@@ -1,0 +1,15 @@
+alias: Start Let's Encrypt
+trigger:
+  platform: time
+  at: '01:00:00'
+condition:
+  condition: numeric_state
+  entity_id: sensor.ssl_certificate_expiry 
+  below: '30'
+action:
+  - service: hassio.addon_start
+    data:
+      addon: "core_letsencrypt"
+  - service: notify.pushbullet
+    data:
+      message: "Started the Let's Encrypt Addon"

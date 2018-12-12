@@ -1,0 +1,113 @@
+default_view:
+  name: Default View
+  icon: mdi:home
+  view: yes
+  entities:
+    - group.all_switches
+    - group.all_lights
+    - group.boysroom
+    - camera.boysroom
+    - group.version
+    - group.climate
+    - group.weather_summary
+weather_summary:
+  name: Weather Summary
+  entities:
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_precip_type
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+climate:
+  name: Climate
+  entities:
+    - sensor.boysroomtemp
+    - sensor.boysroomhumidity
+    - sensor.living_room_temp
+    - sensor.living_room_humidity
+    - climate.sensi
+devicetrackers:
+  name: Device tracker groups
+  icon: mdi:cellphone
+  view: yes
+  entities:
+    - group.thermostatdevices
+    - group.bedtimephones
+thermostatdevices:
+  name: Temperature Devices
+  entities:
+    - device_tracker.449160e74760
+    - device_tracker.08d46aa3a156
+    - device_tracker.b8d7af937aa3
+    - device_tracker.d02b207bd718
+    - device_tracker.smccloud_g7
+    - device_tracker.hmccloud_note8
+bedtimephones:
+  name: Bedtime Devices
+  entities:
+    - device_tracker.449160e74760
+    - device_tracker.08d46aa3a156
+    - device_tracker.b8d7af937aa3
+    - device_tracker.d02b207bd718
+automations:
+  name: Automations
+  icon: mdi:home-automation
+  view: yes
+  entities:
+    - group.all_automations
+cameras:
+  name: Cameras
+  icon: mdi:cctv
+  view: yes
+  entities:
+    - camera.boysroom
+version:
+  name: Server info
+  entities:
+    - sensor.uptime
+    - sensor.installed_version
+    - sensor.ha_version_hassio_stable
+    - sensor.ha_version_hassio_beta
+    - sensor.ha_version_hassio_rc
+    - sensor.ssl_certificate_expiry
+    - sensor.CPU_Temperature
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+weather:
+  name: Weather
+  icon: mdi:weather-sunny
+  view: yes
+  entities:
+    - sensor.dark_sky_precip_type
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_precip_accumulation
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_dew_point
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_win_bearing
+    - sensor.dark_sky_cloud_cover
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_minutely_summary
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_daily_summary
+    - sensor.dark_sky_temperature_high
+    - sensor.dark_sky_temperature_low
+    - sensor.dark_sky_precip_intensity_max
+    - sensor.dark_sky_uv_index
+    - sensor.dark_sky_moon_phase
+boysroom:
+  name: Boys Room Settings
+  icon: mdi:settings
+  view: yes
+  entities:
+    - input_datetime.boys_room_evening
+    - input_datetime.boys_room_morning
+    - input_number.boys_room_limited_brightness

@@ -1,0 +1,17 @@
+alias: Weekly Backup at 3 AM on Saturday
+trigger:
+  platform: time
+  at: '03:00:00'
+condition:
+  condition: and
+  conditions:
+    - condition: time
+      weekday:
+        - sat
+action:
+- service: hassio.snapshot_full
+  data_template:
+    name: Automated Backup {{ now().strftime('%Y-%m-%d') }}
+- service: notify.pushbullet
+  data:
+    message: Creating backup named "Automated Backup {{ now().strftime('%Y-%m-%d') }}"

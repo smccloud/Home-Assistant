@@ -1,0 +1,13 @@
+alias: 'Turn furnace fan off'
+trigger:
+  platform: time
+  at: '00:01:00'
+action:
+  - service: climate.set_fan_mode
+    data:
+      entity_id: climate.sensi
+      fan_mode: 'Auto'
+  - service: notify.pushbullet
+    data:
+      message: "Furnace fan turned off"
+      title: "Furnace fan turned off"

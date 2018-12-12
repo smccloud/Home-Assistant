@@ -1,0 +1,106 @@
+- platform: speedtest
+  hour:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+  server_id: 2656
+- platform: mqtt
+  name: boysroomtemp
+  state_topic: "tele/boysroom/SENSOR"
+  value_template: "{{ value_json['AM2301'].Temperature }}"
+  unit_of_measurement: "°F"
+- platform: mqtt
+  name: boysroomhumidity
+  state_topic: "tele/boysroom/SENSOR"
+  value_template: "{{ value_json['AM2301'].Humidity }}"
+  unit_of_measurement: "%"
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+    - 'time_date'
+    - 'time_utc'
+    - 'beat'
+- platform: uptime
+  unit_of_measurement: hours
+- platform: cert_expiry
+  host: !secret cert_url
+  port: 443
+- platform: darksky
+  api_key: !secret darksky_api_key
+  language: en
+  units: us
+  update_interval: '01:00'
+  monitored_conditions:
+    - summary
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - precip_accumulation
+    - temperature
+    - apparent_temperature
+    - dew_point
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+    - ozone
+    - minutely_summary
+    - hourly_summary
+    - daily_summary
+    - temperature_high
+    - temperature_low
+    - apparent_temperature_high
+    - apparent_temperature_low
+    - precip_intensity_max
+    - uv_index
+    - moon_phase
+- platform: template
+  sensors:
+    living_room_temp:
+      friendly_name: "Living room temperature"
+      unit_of_measurement: "°F"
+      value_template: "{{ states.climate.sensi.attributes.current_temperature }}"
+    living_room_humidity:
+      friendly_name: "Living room humidity"
+      unit_of_measurement: "%"
+      value_template: "{{ states.climate.sensi.attributes.current_humidity|round }}"
+- platform: command_line
+  name: CPU_Temperature
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  # If errors occur, remove degree symbol below
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+- platform: tautulli
+  api_key: !secret tautulli_api_key
+  host: !secret tautulli_host
+  port: 8181
+  ssl: false

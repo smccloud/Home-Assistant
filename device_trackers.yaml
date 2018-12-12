@@ -1,0 +1,12 @@
+#- platform: owntracks
+#  max_gps_accuracy: 200
+#  waypoints: True
+#  mqtt_topic: "owntracks/#"
+#  events_only: True
+#  consider_home: 0:03
+#  track_new_devices: yes
+- platform: nmap_tracker
+  hosts: !secret nmap_range
+  exclude: !secret hassio_host
+  track_new_devices: yes
+#- platform: owntracks_http

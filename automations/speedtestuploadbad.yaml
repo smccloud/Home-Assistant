@@ -1,0 +1,13 @@
+alias: 'Internet Speed Bad'
+trigger:
+  platform: template
+  value_template: '{{ states.sensor.speedtest_upload.state| float < 3 }}'
+action:
+  - service: notify.gmail
+    data:
+      title: 'Internet Speed Bad'
+      message: 'Upload speed below 3Mbit/s'
+  - service: notify.pushbullet
+    data:
+      title: 'Internet Speed Bad'
+      message: 'Upload speed below 3Mbit/s'

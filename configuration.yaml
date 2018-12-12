@@ -1,0 +1,155 @@
+homeassistant:
+  auth_providers:
+    - type: homeassistant
+    # Uncomment next line if you want to enable legacy API password support
+    - type: legacy_api_password
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret home_elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  # Customization file
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+#  whitelist_external_dirs:
+#    - /ssl
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+  themes: !include_dir_merge_named themes/
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: !secret base_url
+  #ssl_certificate: /ssl/fullchain.pem
+  #ssl_key: /ssl/privkey.pem
+  trusted_networks:
+    - !secret home_network
+    - !secret ha_network
+    - !secret vpn_network
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - plex_mediaserver
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+sensor: !include sensors.yaml
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+#  google_actions:
+
+group: !include groups.yaml
+automation: !include_dir_list automations/
+script: !include_dir_list scripts/
+
+device_tracker: !include device_trackers.yaml
+
+mqtt:
+  broker: 172.16.6.2
+  port: 1883
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+
+wemo:
+  static:
+    - !secret heidinightstandip
+zone:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 4500
+  icon: mdi:home
+
+ios:
+
+notify: !include notifications.yaml
+
+homekit:
+  auto_start: False
+  filter:
+    exclude_domains:
+      device_tracker
+
+switch: !include switches.yaml
+
+zeroconf:
+
+camera: !include cameras.yaml
+
+zwave:
+  usb_path: /dev/ttyUSB0
+  network_key: !secret zwave_network_key
+
+zha:
+  usb_path: /dev/ttyUSB1
+  database_path: zigbee.db
+
+light:
+  - platform: group
+    name: boys_room
+    entities:
+      - light.sengled_e11g13_030257bf_1
+      - light.sengled_e11g13_03126970_1
+
+#folder_watcher:
+#  - folder: /ssl
+
+logger:
+  default: warning
+#  logs:
+#    homeassistant.components.homekit: debug
+
+climate:
+
+wink:
+
+recorder:
+  purge_keep_days: 30
+
+history:
+
+influxdb:
+  host: !secret influxdb_host
+  username: !secret influxdb_user
+  password: !secret influxdb_pass
+
+panel_iframe:
+  ide:
+    title: IDE
+    icon: mdi:code-braces
+    url: !secret cloud9_url

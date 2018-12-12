@@ -1,0 +1,14 @@
+alias: HA Version Posted
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: sensor.current_ha_version_posted
+action:
+  - service: notify.gmail
+    data_template:
+      title: "New HA Version Posted!"
+      message: "Home Assistant {{ states.sensor.current_ha_version_posted.state }} is now available!"
+  - service: notify.pushbullet
+    data:
+      title: "New HA Version Posted!"
+      message: "Home Assistant {{ states.sensor.current_ha_version_posted.state }} is now available!"

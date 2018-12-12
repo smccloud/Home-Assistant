@@ -1,0 +1,19 @@
+alias: Temp Set Away
+trigger:
+  platform: state
+  entity_id: group.thermostatdevices
+  from: 'home'
+  to: 'not_home'
+action:
+  - service: climate.set_temperature
+    data_template:
+      temperature: >-
+        {% if is_state_attr('climate.sensi', 'operation_mode', 'heat') -%}
+          {{ states.climate.sensi.attributes.temperature | int - 3 }}
+        {%- else -%}
+          {{ states.climate.sensi.attributes.temperature | int + 3 }}
+        {%- endif %}
+  - service: notify.pushbullet
+    data:
+      title: 'Thermostat set temp changed due to devices leaving home'
+      message: ''

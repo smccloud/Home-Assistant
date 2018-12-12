@@ -1,0 +1,13 @@
+alias: 'Internet Speed Bad'
+trigger:
+  platform: template
+  value_template: '{{ states.sensor.speedtest_ping.state| float > 100 }}'
+action:
+  - service: notify.gmail
+    data:
+      title: 'Internet Speed Bad'
+      message: 'Ping above 100ms'
+  - service: notify.pushbullet
+    data:
+      title: 'Internet Speed Bad'
+      message: 'Ping above 100ms'
