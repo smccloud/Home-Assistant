@@ -99,8 +99,8 @@
   # If errors occur, remove degree symbol below
   unit_of_measurement: "°C"
   value_template: '{{ value | multiply(0.001) | round(1) }}'
-- platform: tautulli
-  api_key: !secret tautulli_api_key
-  host: !secret tautulli_host
-  port: 8181
-  ssl: false
+#- platform: tautulli
+#  api_key: !secret tautulli_api_key
+#  host: !secret tautulli_host
+#  port: 8181
+#  ssl: false
