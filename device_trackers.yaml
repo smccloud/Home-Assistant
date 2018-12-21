@@ -7,6 +7,5 @@
 #  track_new_devices: yes
 - platform: nmap_tracker
   hosts: !secret nmap_range
-  exclude: !secret hassio_host
   track_new_devices: yes
 #- platform: owntracks_http

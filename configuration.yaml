@@ -86,6 +86,8 @@ mqtt:
   password: !secret mqtt_pass
 
 wemo:
+  static:
+    - !secret heidinightstandip
 
 zone:
   name: Home
@@ -114,7 +116,7 @@ zwave:
 
 zha:
   usb_path: /dev/ttyUSB1
-  database_path: zigbee.db
+  database_path: /config/zigbee.db
 
 light:
   - platform: group
