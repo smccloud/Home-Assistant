@@ -116,7 +116,7 @@ zwave:
 
 zha:
   usb_path: /dev/ttyUSB1
-  database_path: /config/zigbee.db
+  database_path: /home/homeassistant/.homeassistant/zigbee.db
 
 light:
   - platform: group
