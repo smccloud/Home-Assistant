@@ -1,4 +1,5 @@
 alias: 'Turn furnace fan off'
+initial_state: True
 trigger:
   platform: time
   at: '00:01:00'
