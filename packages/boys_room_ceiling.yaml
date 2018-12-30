@@ -44,13 +44,13 @@ script:
           {% set time = now().strftime('%H.%M')|float %}
           {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
           {% set evening = states.input_datetime.boys_room_evening.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
-          {% if (button in limited_buttons and not morning <= time < evening) or is_state('light.boys_room', 'on') %}
+          {% if (button in limited_buttons and not morning <= time < evening) or is_state('light.boys_room_2', 'on') %}
             script.light_turn_off_proxy
           {% else %}
-            light.turn_on
+sd            light.turn_on
           {% endif %}
         data_template:
-          entity_id: light.boys_room
+          entity_id: light.boys_room_2
           brightness: >-
             {% set time = now().strftime('%H.%M')|float %}
             {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
