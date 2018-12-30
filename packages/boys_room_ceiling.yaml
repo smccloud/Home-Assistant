@@ -47,7 +47,7 @@ script:
           {% if (button in limited_buttons and not morning <= time < evening) or is_state('light.boys_room_2', 'on') %}
             script.light_turn_off_proxy
           {% else %}
-sd            light.turn_on
+            light.turn_on
           {% endif %}
         data_template:
           entity_id: light.boys_room_2

@@ -68,9 +68,6 @@ version:
   entities:
     - sensor.uptime
     - sensor.installed_version
-    - sensor.ha_version_hassio_stable
-    - sensor.ha_version_hassio_beta
-    - sensor.ha_version_hassio_rc
     - sensor.ssl_certificate_expiry
     - sensor.CPU_Temperature
     - sensor.speedtest_ping
