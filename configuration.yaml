@@ -129,9 +129,7 @@ light:
 #  - folder: /ssl
 
 logger:
-  default: warning
-#  logs:
-#    homeassistant.components.homekit: debug
+  default: error
 
 climate:
 
@@ -147,3 +145,9 @@ panel_iframe:
     title: IDE
     icon: mdi:code-braces
     url: !secret cloud9_url
+
+hue:
+  bridges:
+    - host: !secret hue_bridge
+      allow_unreachable: true
+      allow_hue_groups: true

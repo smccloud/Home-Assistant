@@ -93,8 +93,8 @@
       friendly_name: "Living room humidity"
       unit_of_measurement: "%"
       value_template: "{{ states.climate.sensi.attributes.current_humidity|round }}"
-- platform: tautulli
-  api_key: !secret tautulli_api_key
-  host: !secret tautulli_host
-  port: 8181
-  ssl: false
+#- platform: tautulli
+#  api_key: !secret tautulli_api_key
+#  host: !secret tautulli_host
+#  port: 8181
+#  ssl: false
