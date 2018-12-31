@@ -14,8 +14,9 @@ action:
     entity_id: switch.boys_lamp
   - service: light.turn_on
     data:
-      entity_id: light.boys_room
-      brightness_pct: 1
+      entity_id: light.boys_room_2
+#      brightness_pct: 1
+      brightness_pct: 'input_number.boys_room_limited_brightness'
   - service: climate.set_fan_mode
     data:
       entity_id: climate.sensi
