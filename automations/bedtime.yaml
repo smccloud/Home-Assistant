@@ -9,8 +9,6 @@ condition:
   state: 'home'
 action:
   - service: switch.turn_on
-    entity_id: switch.heidi_nightstand
-  - service: switch.turn_on
     entity_id: switch.boys_lamp
   - service: light.turn_on
     data:
