@@ -9,3 +9,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: true
+- platform: tplink
+  host: !secret shaun_nightstand_ip
+  name: 'Shaun Nightstand'
+  enable_leds: true

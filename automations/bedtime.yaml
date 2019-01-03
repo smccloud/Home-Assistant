@@ -2,7 +2,7 @@ alias: Bedtime
 initial_state: True
 trigger:
   platform: time
-  at: '18:30:00'
+  at: '18:45:00'
 condition:
   condition: state 
   entity_id: 'group.bedtimephones'

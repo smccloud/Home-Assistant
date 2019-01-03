@@ -151,3 +151,7 @@ hue:
     - host: !secret hue_bridge
       allow_unreachable: true
       allow_hue_groups: true
+
+influxdb:
+  host: !secret influxdb_host
+  port: 8086
