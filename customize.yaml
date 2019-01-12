@@ -50,7 +50,7 @@ sensor.furnacefilter:
 light.boys_room:
   hidden: true
 light.boys_room_2:
-  friendly_name: Boy's Room Lights
+  friendly_name: Boy's Room
 light.hue_white_lamp_1:
   friendly_name: BRLO
   hidden: true
