@@ -17,7 +17,6 @@ weather_summary:
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_wind_speed
     - sensor.dark_sky_humidity
-    - sensor.dark_sky_precip_type
     - sensor.dark_sky_precip_intensity
     - sensor.dark_sky_precip_probability
 climate:
@@ -67,7 +66,6 @@ version:
   name: Server info
   entities:
     - sensor.uptime
-    - sensor.installed_version
     - sensor.ssl_certificate_expiry
     - sensor.CPU_Temperature
     - sensor.speedtest_ping

@@ -156,5 +156,5 @@ panel_iframe:
 hue:
   bridges:
     - host: !secret hue_bridge
-      allow_unreachable: true
+      allow_unreachable: false
       allow_hue_groups: true
