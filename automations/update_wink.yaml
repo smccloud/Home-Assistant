@@ -1,0 +1,7 @@
+alias: 'Update Wink Data'
+initial_state: True
+trigger:
+  platform: time_pattern
+  minutes: '/5'
+action:
+  - service: wink.refresh_state_from_wink
