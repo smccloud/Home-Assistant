@@ -108,3 +108,10 @@ boysroom:
     - input_datetime.boys_room_evening
     - input_datetime.boys_room_morning
     - input_number.boys_room_limited_brightness
+shipping:
+  name: Shipping Info
+  icon: mdi:package-variant-closed
+  view: yes
+  entities:
+    - sensor.ups
+    - sensor.fedex

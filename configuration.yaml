@@ -158,3 +158,8 @@ hue:
     - host: !secret hue_bridge
       allow_unreachable: false
       allow_hue_groups: true
+
+#usps:
+#  username: !secret usps_username
+#  password: !secret usps_password
+#  driver: phantomjs
