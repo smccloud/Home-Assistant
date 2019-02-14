@@ -159,6 +159,10 @@ hue:
       allow_unreachable: false
       allow_hue_groups: true
 
+influxdb:
+  host: !secret influxdb_host
+  database: homeassistant
+
 #usps:
 #  username: !secret usps_username
 #  password: !secret usps_password
