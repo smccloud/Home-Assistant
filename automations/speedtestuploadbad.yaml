@@ -1,5 +1,4 @@
 alias: 'Internet Speed Bad'
-initial_state: True
 trigger:
   platform: template
   value_template: '{{ states.sensor.speedtest_upload.state| float < 3 }}'

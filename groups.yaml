@@ -70,9 +70,6 @@ version:
     - sensor.uptime
     - sensor.ssl_certificate_expiry
     - sensor.CPU_Temperature
-    - sensor.speedtest_ping
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
 weather:
   name: Weather
   icon: mdi:weather-sunny
