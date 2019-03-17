@@ -159,12 +159,12 @@ hue:
       allow_unreachable: false
       allow_hue_groups: true
 
-influxdb:
-  host: !secret influxdb_host
-  database: homeassistant
-
 tplink:
   switch:
     - host: !secret shaun_nightstand_ip
 
 system_health:
+
+ring:
+  username: !secret ring_username
+  password: !secret ring_password

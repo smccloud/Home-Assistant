@@ -72,12 +72,4 @@
   username: !secret ups_username
   password: !secret ups_password
   name: UPS
-#- platform: fedex
-#  username: !secret fedex_username
-#  password: !secret fedex_password
-#  name: FedEx
-#- platform: tautulli
-#  api_key: !secret tautulli_api_key
-#  host: !secret tautulli_host
-#  port: 8181
-#  ssl: false
+- platform: ring
