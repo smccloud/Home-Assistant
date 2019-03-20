@@ -10,6 +10,7 @@ trigger:
     from: 'off'
     to: 'on'
 action:
+  - delay: '00:01:00'
   - service: downloader.download_file
     data_template:
       url: "{{ states.camera.front_door.attributes.video_url }}"
