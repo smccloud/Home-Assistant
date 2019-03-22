@@ -2,7 +2,7 @@ homeassistant:
   auth_providers:
     - type: homeassistant
     # Uncomment next line if you want to enable legacy API password support
-    - type: legacy_api_password
+    # - type: legacy_api_password
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
@@ -176,3 +176,5 @@ ffmpeg:
 
 binary_sensor:
   - platform: ring
+
+api:
