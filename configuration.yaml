@@ -177,4 +177,8 @@ ffmpeg:
 binary_sensor:
   - platform: ring
 
+<<<<<<< Updated upstream
 api:
+=======
+api:
+>>>>>>> Stashed changes
