@@ -2,7 +2,7 @@ alias: 'Turn furnace fan off'
 initial_state: True
 trigger:
   platform: time
-  at: '00:01:00'
+  at: '00:10:00'
 action:
   - service: climate.set_fan_mode
     data:

@@ -1,12 +1,3 @@
 - platform: nmap_tracker
   hosts: !secret nmap_range
-<<<<<<< Updated upstream
   track_new_devices: yes
-#- platform: mikrotik
-#  host: !secret routeros_host
-#  username: !secret routeros_username
-#  password: !secret routeros_password
-#  method: ip
-=======
-  track_new_devices: yes
->>>>>>> Stashed changes

@@ -9,18 +9,6 @@ default_view:
     - camera.boysroom
     - group.version
     - group.climate
-    - group.weather_summary
-weather_summary:
-  name: Weather Summary
-  entities:
-    - sensor.dark_sky_summary
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_apparent_temperature
-    - sensor.dark_sky_wind_speed
-    - sensor.dark_sky_humidity
-    - sensor.dark_sky_precip
-    - sensor.dark_sky_precip_intensity
-    - sensor.dark_sky_precip_probability
 climate:
   name: Climate
   entities:
@@ -70,33 +58,6 @@ version:
     - sensor.uptime
     - sensor.ssl_certificate_expiry
     - sensor.CPU_Temperature
-weather:
-  name: Weather
-  icon: mdi:weather-sunny
-  view: yes
-  entities:
-    - sensor.dark_sky_precip_type
-    - sensor.dark_sky_precip_intensity
-    - sensor.dark_sky_precip_probability
-    - sensor.dark_sky_precip_accumulation
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_apparent_temperature
-    - sensor.dark_sky_dew_point
-    - sensor.dark_sky_wind_speed
-    - sensor.dark_sky_win_bearing
-    - sensor.dark_sky_cloud_cover
-    - sensor.dark_sky_humidity
-    - sensor.dark_sky_pressure
-    - sensor.dark_sky_visibility
-    - sensor.dark_sky_ozone
-    - sensor.dark_sky_minutely_summary
-    - sensor.dark_sky_hourly_summary
-    - sensor.dark_sky_daily_summary
-    - sensor.dark_sky_temperature_high
-    - sensor.dark_sky_temperature_low
-    - sensor.dark_sky_precip_intensity_max
-    - sensor.dark_sky_uv_index
-    - sensor.dark_sky_moon_phase
 boysroom:
   name: Boys Room Settings
   icon: mdi:settings

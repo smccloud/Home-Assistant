@@ -21,37 +21,6 @@
 - platform: cert_expiry
   host: !secret cert_url
   port: 443
-- platform: darksky
-  api_key: !secret darksky_api_key
-  language: en
-  units: us
-  update_interval: '01:00'
-  monitored_conditions:
-    - summary
-    - precip_type
-    - precip_intensity
-    - precip_probability
-    - precip_accumulation
-    - temperature
-    - apparent_temperature
-    - dew_point
-    - wind_speed
-    - wind_bearing
-    - cloud_cover
-    - humidity
-    - pressure
-    - visibility
-    - ozone
-    - minutely_summary
-    - hourly_summary
-    - daily_summary
-    - temperature_high
-    - temperature_low
-    - apparent_temperature_high
-    - apparent_temperature_low
-    - precip_intensity_max
-    - uv_index
-    - moon_phase
 - platform: template
   sensors:
     living_room_temp:
@@ -68,8 +37,17 @@
   # If errors occur, remove degree symbol below
   unit_of_measurement: "°C"
   value_template: '{{ value | multiply(0.001) | round(1) }}'
-- platform: ups
-  username: !secret ups_username
-  password: !secret ups_password
-  name: UPS
 - platform: ring
+- platform: openweathermap
+  api_key: !secret openweathermap_api_key
+  monitored_conditions:
+    - weather
+    - temperature
+    - wind_speed
+    - wind_bearing
+    - humidity
+    - pressure
+    - clouds
+    - rain
+    - snow
+    - weather_code
