@@ -1,5 +1,5 @@
 # Welcome
-Welcome to the config repo for my Home Assistant install.  I may not have as complex of a setup as others, but it does what my wife and I need.  I am running on an older HP Core 2 Duo system with 8GB of RAM, 80GB boot drive, and a 500GB RAID 1 array for most data.  Thanks to dale3h I still have a Hass.IO install.  I do not use the Meraki device tracker even though I have a Meraki setup at home, just doesn't work well.  I use the NMAP device tracker and it works great.
+Welcome to the config repo for my Home Assistant install.  I may not have as complex of a setup as others, but it does what my wife and I need.  I am running on an unRAID install.  It is currently an Intel Core i7-4770 with 24GB of RAM, a 16GB boot USB drive, multiple storage drives and a SPC 512GB SSD for cache & docker images.  MQTT, Cloud9 IDE & a linuxserver.io Letsencrypt (reverse proxy for HTTPS) image run in Docker.  I am using Nekmo/amazon-dash in a VM as it was not stable as a Docker container.  The same VM also runs Openeats using Docker Compose.  I do not use the Meraki device tracker even though I have a Meraki setup at home, just doesn't work well.  I use the NMAP device tracker and it works great.
 
 # Automations
 All my automations live in the automations folder and I attempt to name them based on when they fire &/or what they do.
