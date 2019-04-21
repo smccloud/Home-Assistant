@@ -14,11 +14,7 @@ action:
     data:
       entity_id: light.boy_s_room
       brightness_pct: 10
-  - service: climate.set_fan_mode
-    data:
-      entity_id: climate.sensi
-      fan_mode: 'On'
   - service: notify.pushbullet
     data:
-      message: "Furnace fan, Heidi's nightstand & boy's lamp turned on"
+      message: "Boy's ceiling & boy's lamp turned on"
       title: "Bedtime"
