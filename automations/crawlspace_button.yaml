@@ -1,4 +1,4 @@
-alias: 'Crawl Space'
+alias: 'Crawl Space Button'
 initial_state: true
 trigger:
   platform: mqtt
