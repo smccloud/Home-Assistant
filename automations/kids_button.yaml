@@ -2,7 +2,7 @@ alias: 'Kids Button'
 initial_state: true
 trigger:
   platform: mqtt
-  topic: "sonoff_bridge/boysroom"
+  topic: "sonoff_bridge/kidsbutton"
   payload: "toggle"
 action:
   - service: script.boys_room_ceiling

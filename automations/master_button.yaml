@@ -2,7 +2,7 @@ alias: 'Master Button'
 initial_state: true
 trigger:
   platform: mqtt
-  topic: "sonoff_bridge/boysroom"
+  topic: "sonoff_bridge/masterbutton"
   payload: "toggle"
 action:
   - service: script.boys_room_ceiling
