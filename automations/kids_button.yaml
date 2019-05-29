@@ -7,4 +7,4 @@ trigger:
 action:
   - service: script.boys_room_ceiling
     data:
-      button: kids_button
+      button: "kids_button"
