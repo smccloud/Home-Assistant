@@ -1,0 +1,10 @@
+alias: 'Master Button'
+initial_state: true
+trigger:
+  platform: mqtt
+  topic: "sonoff_bridge/boysroom"
+  payload: "toggle"
+action:
+  - service: script.boys_room_ceiling
+    data:
+      button: master_button
