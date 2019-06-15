@@ -32,7 +32,7 @@ thermostatdevices:
     - device_tracker.64_a2_f9_e6_d2_79
     - device_tracker.d02b207bd718
     - device_tracker.smccloud_g7
-    - device_tracker.hmccloud_af05b130_ea4b_424e_9eaa_fb79f0b4a0ef
+    - device_tracker.hmccloud_af05b130_ea4b_424e_9eaa_fb79f0b4a0ef_2
 bedtimephones:
   name: Bedtime Devices
   entities:
