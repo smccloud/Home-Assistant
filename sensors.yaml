@@ -31,12 +31,6 @@
       friendly_name: "Living room humidity"
       unit_of_measurement: "%"
       value_template: "{{ states.climate.sensi.attributes.current_humidity|round }}"
-- platform: command_line
-  name: CPU_Temperature
-  command: "cat /sys/class/thermal/thermal_zone0/temp"
-  # If errors occur, remove degree symbol below
-  unit_of_measurement: "°C"
-  value_template: '{{ value | multiply(0.001) | round(1) }}'
 - platform: ring
 - platform: openweathermap
   api_key: !secret openweathermap_api_key
