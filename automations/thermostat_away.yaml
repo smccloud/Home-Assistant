@@ -10,8 +10,10 @@ action:
       temperature: >-
         {% if is_state_attr('climate.sensi', 'operation_mode', 'heat') -%}
           {{ states.climate.sensi.attributes.temperature | int - 3 }}
-        {%- else -%}
+        {% elif is_state_attr('climate.sensi', 'operation_mode', 'cool') -%}
           {{ states.climate.sensi.attributes.temperature | int + 3 }}
+        {%- else -%}
+          {{ states.climate.sensi.attributes.temperature | int }}
         {%- endif %}
   - service: notify.pushbullet
     data:
