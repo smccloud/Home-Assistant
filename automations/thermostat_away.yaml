@@ -15,6 +15,18 @@ action:
         {%- else -%}
           {{ states.climate.sensi.attributes.temperature | int }}
         {%- endif %}
+      target_temp_low: >-
+        {% if is_state_attr('climate.sensi', 'operation_mode', 'auto') -%}
+          {{ states.climate.sensi.attributes.target_temp_low | int - 3 }}
+        {%- else -%}
+          {{ states.climate.sensi.attributes.target_temp_low | int(71) }}
+        {%- endif %}
+      target_temp_high: >-
+        {% if is_state_attr('climate.sensi', 'operation_mode', 'auto') -%}
+          {{ states.climate.sensi.attributes.target_temp_high | int + 3 }}
+        {%- else -%}
+          {{ states.climate.sensi.attributes.target_temp_high | int(73) }}
+        {%- endif %}
   - service: notify.pushbullet
     data:
       title: 'Thermostat set temp changed due to devices leaving home'
