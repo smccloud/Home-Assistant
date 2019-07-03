@@ -9,23 +9,23 @@ action:
     data_template:
       temperature: >-
         {% if is_state_attr('climate.sensi', 'operation_mode', 'heat') -%}
-          {{ states.climate.sensi.attributes.temperature | int - 3 }}
+          {{ state_attr('climate.sensi', 'temperature')|int(71) - 3 }}
         {% elif is_state_attr('climate.sensi', 'operation_mode', 'cool') -%}
-          {{ states.climate.sensi.attributes.temperature | int + 3 }}
+          {{ state_attr('climate.sensi', 'temperature')|int(73) + 3 }}
         {%- else -%}
-          {{ states.climate.sensi.attributes.temperature | int }}
+          {{ state_attr('climate.sensi', 'temperature') }}
         {%- endif %}
       target_temp_low: >-
         {% if is_state_attr('climate.sensi', 'operation_mode', 'auto') -%}
-          {{ states.climate.sensi.attributes.target_temp_low | int - 3 }}
+          {{ state_attr('climate.sensi', 'target_temp_low')|int(71) - 3 }}
         {%- else -%}
-          {{ states.climate.sensi.attributes.target_temp_low | int(71) }}
+          {{ state_attr('climate.sensi', 'target_temp_low')|int(71) }}
         {%- endif %}
       target_temp_high: >-
         {% if is_state_attr('climate.sensi', 'operation_mode', 'auto') -%}
-          {{ states.climate.sensi.attributes.target_temp_high | int + 3 }}
+          {{ state_attr('climate.sensi', 'target_temp_high')|int(73) + 3 }}
         {%- else -%}
-          {{ states.climate.sensi.attributes.target_temp_high | int(73) }}
+         {{ state_attr('climate.sensi', 'target_temp_low')|int(73) }}
         {%- endif %}
   - service: notify.pushbullet
     data:
