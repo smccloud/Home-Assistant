@@ -45,3 +45,22 @@
     - rain
     - snow
     - weather_code
+- platform: influxdb
+  username: !secret influxdb_user
+  password: !secret influxdb_pass
+  host: !secret influxdb_host
+  queries:
+    - name: Crawlspace Humidity
+      where: '"location" = ''crawlspace'''
+      group_function: last
+      measurement: '"rpi-dht22"'
+      database: !secret influxdb_sensor_db1
+      field: humidity
+      unit_of_measurement: "%H"
+    - name: Crawlspace Temperature
+      where: '"location" = ''crawlspace'''
+      group_function: last
+      measurement: '"rpi-dht22"'
+      database: !secret influxdb_sensor_db1
+      field: temperature
+      unit_of_measurement: "°F"

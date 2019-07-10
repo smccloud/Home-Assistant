@@ -59,5 +59,7 @@ light.hue_white_lamp_2:
   hidden: true
 light.hue_white_lamp_3:
   hidden: true
-sensor.CPU_Temperature:
-  friendly_name: CPU Temperature
+sensor.crawlspace_temperature:
+  friendly_name: Temperature
+sensor.crawlspace_humidity:
+  friendly_name: Humidity
