@@ -172,3 +172,8 @@ binary_sensor:
   - platform: ring
 
 api:
+
+influxdb:
+  host: !secret influxdb_host
+  username: !secret influxdb_user
+  password: !secret influxdb_pass
