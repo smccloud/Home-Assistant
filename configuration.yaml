@@ -111,23 +111,12 @@ zeroconf:
 
 camera: !include cameras.yaml
 
-#zwave:
-#  usb_path: /dev/ttyUSB0
-#  network_key: !secret zwave_network_key
-
-#zha:
-#  usb_path: /dev/ttyUSB1
-#  database_path: /config/zigbee.db
-
 light:
   - platform: group
     name: boys_room
     entities:
       - light.sengled_e11g13_030257bf_1
       - light.sengled_e11g13_03126970_1
-
-#folder_watcher:
-#  - folder: /ssl
 
 logger:
   default: error
