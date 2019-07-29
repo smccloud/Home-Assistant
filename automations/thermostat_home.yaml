@@ -13,7 +13,7 @@ action:
         {% elif is_state_attr('climate.sensi', 'operation_mode', 'cool') -%}
           {{ state_attr('climate.sensi', 'temperature')|int(73) - 3 }}
         {%- else -%}
-          {{ state_attr('climate.sensi', 'temperature') }}
+          {{ state_attr('climate.sensi', 'temperature')|int(73) }}
         {%- endif %}
       target_temp_low: >-
         {% if is_state_attr('climate.sensi', 'operation_mode', 'auto') -%}
