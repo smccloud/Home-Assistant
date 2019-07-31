@@ -7,6 +7,7 @@ trigger:
 action:
   - service: climate.set_temperature
     data_template:
+      entity_id: all
       temperature: >-
         {% if is_state_attr('climate.sensi', 'operation_mode', 'heat') -%}
           {{ state_attr('climate.sensi', 'temperature')|int(71) - 3 }}

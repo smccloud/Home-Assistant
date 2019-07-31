@@ -120,6 +120,9 @@ light:
 
 logger:
   default: error
+#  default: info
+#  logs:
+#    wink: debug
 
 climate:
 
