@@ -1,0 +1,21 @@
+alias: Heat Set Away
+initial_state: True
+trigger:
+  platform: state
+  entity_id: group.thermostatdevices
+  from: 'home'
+  to: 'not_home'
+condition:
+  - condition: state
+    entity_id: climate.sensi
+    state: heat
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.sensi
+      temperature: >-
+        {{ states('input_text.ac_set_point_away')|int }}
+  - service: notify.pushbullet
+    data:
+      title: 'Thermostat set temp changed due to devices leaving home'
+      message: ''

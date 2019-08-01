@@ -1,0 +1,21 @@
+alias: Heat Set Home
+initial_state: True
+trigger:
+  platform: state
+  entity_id: group.thermostatdevices
+  from: 'not_home'
+  to: 'home'
+condition:
+  - condition: state
+    entity_id: climate.sensi
+    state: heat
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.sensi
+      temperature: >-
+        {{ states('input_text.heat_set_point_home')|int }}
+  - service: notify.pushbullet
+    data:
+      title: 'Thermostat set temp changed due to devices getting home'
+      message: ''

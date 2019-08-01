@@ -119,10 +119,10 @@ light:
       - light.sengled_e11g13_03126970_1
 
 logger:
-  default: error
-#  default: info
-#  logs:
-#    wink: debug
+#  default: error
+  default: info
+  logs:
+    wink: debug
 
 climate:
 
@@ -179,3 +179,21 @@ influxdb:
       - sensor.owm_temperature
       - sensor.hvac_mode
       - climate.sensi
+
+input_text:
+  ac_set_point_home:
+    name: "Air Conditioning Set Point Home"
+  ac_set_point_away:
+    name: "Air Conditioning Set Point Away"
+  heat_set_point_home:
+    name: "Heat Set Point Home"
+  heat_set_point_away:
+    name: "Heat Set Point Away"
+  auto_low_set_point_home:
+    name: "Auto Low Set Point Home"
+  auto_low_set_point_away:
+    name: "Auto Low Set Point Away"
+  auto_high_set_point_home:
+    name: "Auto High Set Point Home"
+  auto_high_set_point_away:
+    name: "Auto High Set Point Away"
