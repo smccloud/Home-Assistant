@@ -15,9 +15,9 @@ action:
       entity_id: climate.sensi
       temperature: 72
       target_temp_low: >-
-        {{ states('input_text.auto_low_set_point_away')|int }}
+        {{ state_attr('climate.sensi', 'target_temp_low')|int(71) - 3 }}
       target_temp_high: >-
-        {{ states('input_text.auto_high_set_point_away')|int }}
+        {{ state_attr('climate.sensi', 'target_temp_high')|int(73) + 3 }}
   - service: notify.pushbullet
     data:
       title: 'Thermostat set temp changed due to devices leaving home'

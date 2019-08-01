@@ -14,7 +14,7 @@ action:
     data_template:
       entity_id: climate.sensi
       temperature: >-
-        {{ states('input_text.heat_set_point_home')|int }}
+        {{ state_attr('climate.sensi', 'temperature')|int(71) + 3 }}
   - service: notify.pushbullet
     data:
       title: 'Thermostat set temp changed due to devices getting home'
