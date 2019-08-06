@@ -78,4 +78,3 @@
       unit_of_measurement: "°C"
       measurement: '"sensors"'
       value_template: "{{ value | round(1)  }}"
-
