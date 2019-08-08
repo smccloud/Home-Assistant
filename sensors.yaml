@@ -71,7 +71,7 @@
       unit_of_measurement: "°F"
       value_template: "{{ value | round(1)  }}"
     - name: Server CPU Temperature
-      where: '"host" = ''BB-8'' AND "chip" = ''w83795g-i2c-1-2f'''
+      where: '"host" = ''BB-8'' AND "chip" = ''k10temp-pci-00c3'''
       group_function: last
       database: !secret influxdb_sensor_db2
       field: temp_input
