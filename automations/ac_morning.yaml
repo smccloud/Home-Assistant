@@ -1,0 +1,19 @@
+alias: AC Set Morning
+initial_state: True
+trigger:
+  platform: time
+  at: '08:00:00'
+condition:
+  - condition: state
+    entity_id: climate.sensi
+    state: cool
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.sensi
+      temperature: >-
+        {{ state_attr('climate.sensi', 'temperature')|int(73) - 2 }}
+  - service: notify.pushbullet
+    data:
+      title: 'Thermostat set temp changed due to morning'
+      message: ''
