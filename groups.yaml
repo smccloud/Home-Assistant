@@ -28,8 +28,8 @@ thermostatdevices:
   name: Temperature Devices
   entities:
     - device_tracker.c0_9a_d0_3f_87_05
-    - device_tracker.08d46aa3a156
-    - device_tracker.64_a2_f9_e6_d2_79
+    - device_tracker.g7_thinq
+    - device_tracker.heidis_iphone
     - device_tracker.d02b207bd718
     - device_tracker.smccloud_g7_2
     - device_tracker.hmccloud_af05b130_ea4b_424e_9eaa_fb79f0b4a0ef_2
@@ -37,8 +37,8 @@ bedtimephones:
   name: Bedtime Devices
   entities:
     - device_tracker.c0_9a_d0_3f_87_05
-    - device_tracker.08d46aa3a156
-    - device_tracker.64_a2_f9_e6_d2_79
+    - device_tracker.g7_thinq
+    - device_tracker.heidis_iphone
     - device_tracker.d02b207bd718
 automations:
   name: Automations

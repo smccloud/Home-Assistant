@@ -78,10 +78,8 @@ group: !include groups.yaml
 automation: !include_dir_list automations/
 script: !include_dir_list scripts/
 
-device_tracker: !include device_trackers.yaml
-
 mqtt:
-  broker: 172.16.6.2
+  broker: !secret mqtt_broker
   port: 1883
   username: !secret mqtt_user
   password: !secret mqtt_pass
@@ -119,10 +117,13 @@ light:
       - light.sengled_e11g13_03126970_1
 
 logger:
-#  default: error
-  default: info
-  logs:
-    wink: debug
+  default: error
+#  default: info
+#  logs:
+#    aiounifi: debug
+#    homeassistant.components.unifi: debug
+#    homeassistant.components.device_tracker.unifi: debug
+#    homeassistant.components.switch.unifi: debug
 
 climate:
 
@@ -197,3 +198,10 @@ input_text:
     name: "Auto High Set Point Home"
   auto_high_set_point_away:
     name: "Auto High Set Point Away"
+
+unifi:
+  controllers:
+    - host: !secret unifi_host
+      site: !secret unifi_site
+      ssid_filter:
+        !secret unifi_ssid
