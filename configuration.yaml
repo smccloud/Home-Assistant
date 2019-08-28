@@ -120,6 +120,8 @@ logger:
   default: error
 #  default: info
 #  logs:
+#    wink: debug
+#    climate: debug
 #    aiounifi: debug
 #    homeassistant.components.unifi: debug
 #    homeassistant.components.device_tracker.unifi: debug
