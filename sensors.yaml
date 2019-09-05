@@ -27,14 +27,10 @@
     living_room_temp:
       friendly_name: "Living room temperature"
       unit_of_measurement: "°F"
-      value_template: "{{ states.climate.sensi.attributes.current_temperature }}"
-    living_room_humidity:
-      friendly_name: "Living room humidity"
-      unit_of_measurement: "%"
-      value_template: "{{ states.climate.sensi.attributes.current_humidity|round }}"
+      value_template: "{{ states.climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1.attributes.current_temperature }}"
     hvac_mode:
       friendly_name: "HVAC Mode"
-      value_template: "{{ states.climate.sensi.attributes.hvac_action }}"
+      value_template: "{{ states.climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1.attributes.hvac_action }}"
 - platform: ring
 - platform: openweathermap
   api_key: !secret openweathermap_api_key
