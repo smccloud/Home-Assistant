@@ -199,6 +199,3 @@ unifi:
       site: !secret unifi_site
       ssid_filter:
         !secret unifi_ssid
-
-lovelace:
-  mode: yaml
