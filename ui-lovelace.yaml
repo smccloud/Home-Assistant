@@ -1,9 +1,7 @@
 title: Home
-# Include external resources
 resources:
   - url: /local/dual-thermostat/dual-thermostat.js?v=1
     type: js
-
 views:
   - badges: []
     cards:
@@ -100,6 +98,21 @@ views:
           - entity: automation.heat_set_night
         title: Climate Automations
         type: entities
+      - entities:
+          - entity: automation.ct101_ac_set_away
+          - entity: automation.ct101_ac_set_home
+          - entity: automation.ct101_ac_set_morning
+          - entity: automation.ct101_ac_set_night
+          - entity: automation.ct101_auto_set_away
+          - entity: automation.ct101_auto_set_home
+          - entity: automation.ct101_auto_set_morning
+          - entity: automation.ct101_auto_set_night
+          - entity: automation.ct101_heat_set_away
+          - entity: automation.ct101_heat_set_home
+          - entity: automation.ct101_heat_set_morning
+          - entity: automation.ct101_heat_set_night
+        title: CT101 Climate Automations
+        type: entities
     icon: 'mdi:home-automation'
     path: automations
     title: Automations
@@ -179,12 +192,14 @@ views:
     title: Settings
   - badges: []
     cards:
-      - type: custom:dual-thermostat
+      - type: 'custom:dual-thermostat'
         name: CT101
         entities:
-          - entity: climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1
+          - entity: >-
+              climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1
             type: cool
-          - entity: climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1
+          - entity: >-
+              climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1
             type: heat
         fan_control: true
         min_slider: 60
