@@ -1,0 +1,19 @@
+alias: CT101 Set Cool
+initial_state: True
+trigger:
+  platform: state
+  entity_id: climate.sensi
+  to: 'cool'
+action:
+  - service: climate.set_hvac_mode
+    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1
+    data:
+      hvac_mode: cool
+  - service: climate.set_hvac_mode
+    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1
+    data:
+      hvac_mode: cool
+  - service: notify.pushbullet
+    data:
+      title: 'CT101 mode sync'
+      message: ''

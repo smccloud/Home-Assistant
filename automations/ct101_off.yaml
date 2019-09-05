@@ -1,0 +1,19 @@
+alias: CT101 Set Off
+initial_state: True
+trigger:
+  platform: state
+  entity_id: climate.sensi
+  to: 'off'
+action:
+  - service: climate.set_hvac_mode
+    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1
+    data:
+      hvac_mode: off
+  - service: climate.set_hvac_mode
+    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1
+    data:
+      hvac_mode: off
+  - service: notify.pushbullet
+    data:
+      title: 'CT101 mode sync'
+      message: ''
