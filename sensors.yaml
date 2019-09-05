@@ -75,6 +75,6 @@
       group_function: last
       database: !secret influxdb_sensor_db2
       field: temp_input
-      unit_of_measurement: "°C"
+      unit_of_measurement: "ºC"
       measurement: '"sensors"'
       value_template: "{{ value | round(1)  }}"

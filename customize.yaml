@@ -57,5 +57,3 @@ light.hue_white_lamp_2:
   hidden: true
 light.hue_white_lamp_3:
   hidden: true
-sensor.server_cpu_temperature:
-  unit_of_measurement: °C

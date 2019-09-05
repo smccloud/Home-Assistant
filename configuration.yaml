@@ -118,14 +118,6 @@ light:
 
 logger:
   default: error
-#  default: info
-#  logs:
-#    wink: debug
-#    climate: debug
-#    aiounifi: debug
-#    homeassistant.components.unifi: debug
-#    homeassistant.components.device_tracker.unifi: debug
-#    homeassistant.components.switch.unifi: debug
 
 climate:
 
@@ -207,3 +199,6 @@ unifi:
       site: !secret unifi_site
       ssid_filter:
         !secret unifi_ssid
+
+lovelace:
+  mode: yaml
