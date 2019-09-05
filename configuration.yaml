@@ -121,8 +121,6 @@ logger:
 
 climate:
 
-wink:
-
 recorder:
   purge_keep_days: 30
 
