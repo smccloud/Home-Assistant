@@ -126,12 +126,6 @@ recorder:
 
 history:
 
-panel_iframe:
-  ide:
-    title: IDE
-    icon: mdi:code-braces
-    url: !secret cloud9_url
-
 hue:
   bridges:
     - host: !secret hue_bridge
