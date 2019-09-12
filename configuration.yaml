@@ -160,7 +160,6 @@ influxdb:
     entities:
       - sensor.boysroomhumidity
       - sensor.boysroomtemp
-      - sensor.living_room_humidity
       - sensor.living_room_temp
       - sensor.owm_humidity
       - sensor.owm_temperature
