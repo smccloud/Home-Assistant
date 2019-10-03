@@ -152,20 +152,6 @@ binary_sensor:
 
 api:
 
-influxdb:
-  host: !secret influxdb_host
-  username: !secret influxdb_user
-  password: !secret influxdb_pass
-  include:
-    entities:
-      - sensor.boysroomhumidity
-      - sensor.boysroomtemp
-      - sensor.living_room_temp
-      - sensor.owm_humidity
-      - sensor.owm_temperature
-      - sensor.hvac_mode
-      - climate.sensi
-
 input_text:
   ac_set_point_home:
     name: "Air Conditioning Set Point Home"

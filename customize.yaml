@@ -55,3 +55,5 @@ light.hue_white_lamp_2:
   hidden: true
 light.hue_white_lamp_3:
   hidden: true
+sensor.ssl_certificate_expiry:
+  friendly_name: SSL Certification Expiration
