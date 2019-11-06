@@ -153,22 +153,38 @@ binary_sensor:
 api:
 
 input_text:
-  ac_set_point_home:
-    name: "Air Conditioning Set Point Home"
-  ac_set_point_away:
-    name: "Air Conditioning Set Point Away"
-  heat_set_point_home:
-    name: "Heat Set Point Home"
-  heat_set_point_away:
-    name: "Heat Set Point Away"
-  auto_low_set_point_home:
-    name: "Auto Low Set Point Home"
-  auto_low_set_point_away:
-    name: "Auto Low Set Point Away"
-  auto_high_set_point_home:
-    name: "Auto High Set Point Home"
-  auto_high_set_point_away:
-    name: "Auto High Set Point Away"
+  ac_set_point_home_day:
+    name: "AC Set Point Home Day"
+  ac_set_point_away_day:
+    name: "AC Set Point Away Day"
+  ac_set_point_home_night:
+    name: "AC Set Point Home Night"
+  ac_set_point_away_night:
+    name: "AC Set Point Away Night"
+  heat_set_point_home_day:
+    name: "Heat Set Point Home Day"
+  heat_set_point_away_day:
+    name: "Heat Set Point Away Day"
+  heat_set_point_home_night:
+    name: "Heat Set Point Home Night"
+  heat_set_point_away_night:
+    name: "Heat Set Point Away Night"
+  auto_low_set_point_home_day:
+    name: "Auto Low Set Point Home Day"
+  auto_low_set_point_away_day:
+    name: "Auto Low Set Point Away Day"
+  auto_high_set_point_home_day:
+    name: "Auto High Set Point Home Day"
+  auto_high_set_point_away_day:
+    name: "Auto High Set Point Away Day"
+  auto_low_set_point_home_night:
+    name: "Auto Low Set Point Home Night"
+  auto_low_set_point_away_night:
+    name: "Auto Low Set Point Away Night"
+  auto_high_set_point_home_night:
+    name: "Auto High Set Point Home Night"
+  auto_high_set_point_away_night:
+    name: "Auto High Set Point Away Night"
 
 unifi:
   controllers:
@@ -176,3 +192,9 @@ unifi:
       site: !secret unifi_site
       ssid_filter:
         !secret unifi_ssid
+
+panel_iframe:
+  ide:
+    title: IDE
+    icon: mdi:code-braces
+    url: !secret ide_url
