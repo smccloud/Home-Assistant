@@ -152,39 +152,125 @@ binary_sensor:
 
 api:
 
-input_text:
+input_datetime:
+  climate_night:
+    has_time: true
+  climate_morning:
+    has_time: true
+
+input_number:
   ac_set_point_home_day:
     name: "AC Set Point Home Day"
+    mode: box
+    initial: 73
+    min: 60
+    max: 80
+    step: 1
   ac_set_point_away_day:
     name: "AC Set Point Away Day"
+    mode: box
+    initial: 76
+    min: 60
+    max: 80
+    step: 1
   ac_set_point_home_night:
     name: "AC Set Point Home Night"
+    mode: box
+    initial: 75
+    min: 60
+    max: 80
+    step: 1
   ac_set_point_away_night:
     name: "AC Set Point Away Night"
+    mode: box
+    initial: 78
+    min: 60
+    max: 80
+    step: 1
   heat_set_point_home_day:
     name: "Heat Set Point Home Day"
+    mode: box
+    initial: 71
+    min: 60
+    max: 80
+    step: 1
   heat_set_point_away_day:
     name: "Heat Set Point Away Day"
+    mode: box
+    initial: 68
+    min: 60
+    max: 80
+    step: 1
   heat_set_point_home_night:
     name: "Heat Set Point Home Night"
+    mode: box
+    initial: 69
+    min: 60
+    max: 80
+    step: 1
   heat_set_point_away_night:
     name: "Heat Set Point Away Night"
+    mode: box
+    initial: 66
+    min: 60
+    max: 80
+    step: 1
   auto_low_set_point_home_day:
     name: "Auto Low Set Point Home Day"
+    mode: box
+    initial: 71
+    min: 60
+    max: 80
+    step: 1
   auto_low_set_point_away_day:
     name: "Auto Low Set Point Away Day"
+    mode: box
+    initial: 68
+    min: 60
+    max: 80
+    step: 1
   auto_high_set_point_home_day:
     name: "Auto High Set Point Home Day"
+    mode: box
+    initial: 73
+    min: 60
+    max: 80
+    step: 1
   auto_high_set_point_away_day:
     name: "Auto High Set Point Away Day"
+    mode: box
+    initial: 76
+    min: 60
+    max: 80
+    step: 1
   auto_low_set_point_home_night:
     name: "Auto Low Set Point Home Night"
+    mode: box
+    initial: 69
+    min: 60
+    max: 80
+    step: 1
   auto_low_set_point_away_night:
     name: "Auto Low Set Point Away Night"
+    mode: box
+    initial: 66
+    min: 60
+    max: 80
+    step: 1
   auto_high_set_point_home_night:
     name: "Auto High Set Point Home Night"
+    mode: box
+    initial: 75
+    min: 60
+    max: 80
+    step: 1
   auto_high_set_point_away_night:
     name: "Auto High Set Point Away Night"
+    mode: box
+    initial: 78
+    min: 60
+    max: 80
+    step: 1
 
 unifi:
   controllers:
@@ -198,3 +284,5 @@ panel_iframe:
     title: IDE
     icon: mdi:code-braces
     url: !secret ide_url
+
+ios:
