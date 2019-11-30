@@ -57,3 +57,5 @@ light.hue_white_lamp_3:
   hidden: true
 sensor.ssl_certificate_expiry:
   friendly_name: SSL Certification Expiration
+light.sengled_e11_g13_70691203_level_on_off:
+  friendly_name: Crochet Light
