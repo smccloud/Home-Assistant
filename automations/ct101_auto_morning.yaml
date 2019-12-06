@@ -2,7 +2,7 @@ alias: CT101 Auto Set Morning
 initial_state: True
 trigger:
   platform: time
-  at: '08:00:00'
+  at: '07:30:00'
 condition:
   - condition: state
     entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1
