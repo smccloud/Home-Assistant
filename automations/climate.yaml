@@ -3,6 +3,15 @@ initial_state: False
 trigger:
   platform: time_pattern
   minutes: "/5"
-#action:
-#  - service: climate.set_temperature
-#    data_template:
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: all
+      temperature: >-
+        {% if is_state('sensor.hvac_mode', 'heat') -%}
+          sensor.heat_home_temp_to_use|int
+        {% elif is_state('sensor.hvac_mode', 'cool') %}
+          sensor.ac_home_temp_to_use|int
+        {% elif is_state('sensor.hvac_mode', 'auto') %}
+          # make this do something
+        {%- endif %}
