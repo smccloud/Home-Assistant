@@ -1,0 +1,8 @@
+alias: CT101 Temp Set
+initial_state: False
+trigger:
+  platform: time_pattern
+  minutes: "/5"
+#action:
+#  - service: climate.set_temperature
+#    data_template:

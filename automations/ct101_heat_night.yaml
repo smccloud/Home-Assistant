@@ -5,14 +5,13 @@ trigger:
   at: '22:00:00'
 condition:
   - condition: state
-    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1
+    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
     state: heat
 action:
   - service: climate.set_temperature
     data_template:
-      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1
-      temperature: >-
-        {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1', 'temperature')|int(71) - 2 }}
+      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+      temperature: input_number.heat_set_point_home_night
   - service: notify.pushbullet
     data:
       title: 'CT101 thermostat set temp changed due to night'

@@ -29,9 +29,6 @@ views:
           - entity: sensor.boysroomhumidity
           - entity: sensor.living_room_temp
           - entity: sensor.living_room_humidity
-          - entity: sensor.crawlspace_temperature
-          - entity: sensor.crawlspace_humidity
-          - entity: sensor.server_cpu_temperature
         show_header_toggle: false
         title: Climate
         type: entities

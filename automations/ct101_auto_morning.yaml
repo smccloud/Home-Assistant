@@ -5,19 +5,19 @@ trigger:
   at: '07:30:00'
 condition:
   - condition: state
-    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1
+    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
     state: heat_cool
 action:
   - service: climate.set_temperature
     data_template:
-      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1
+      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
       temperature: >-
-        {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1', 'target_temp_low')|int(71) + 2 }}
+        {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_mode', 'target_temp_low')|int(71) + 2 }}
   - service: climate.set_temperature
     data_template:
-      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1
+      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
       target_temp_high: >-
-        {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1', 'target_temp_high')|int(73) - 2 }}
+        {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_mode', 'target_temp_high')|int(73) - 2 }}
   - service: notify.pushbullet
     data:
       title: 'CT101 thermostat set temp changed due to morning'

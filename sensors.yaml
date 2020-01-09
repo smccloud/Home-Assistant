@@ -24,13 +24,105 @@
   port: 443
 - platform: template
   sensors:
+    hvac_mode:
+      friendly_name: "HVAC Mode"
+      value_template: "{{ states('climate.radio_thermostat_company_of_america_ct101_thermostat_mode') }}"
     living_room_temp:
       friendly_name: "Living room temperature"
       unit_of_measurement: "°F"
-      value_template: "{{ states.climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1.attributes.current_temperature }}"
-    hvac_mode:
-      friendly_name: "HVAC Mode"
-      value_template: "{{ states.climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1.attributes.hvac_action }}"
+      value_template: "{{ states('sensor.radio_thermostat_company_of_america_ct101_thermostat_temperature') }}"
+    living_room_humidity:
+      friendly_name: "Living room humidity"
+      unit_of_measurement: "%"
+      value_template: "{{ states('sensor.radio_thermostat_company_of_america_ct101_thermostat_relative_humidity') }}"
+    heat_home_temp_to_use:
+      friendly_name: "Heat home temp to Use"
+      entity_id: sensor.time
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% set ftime = states('sensor.time')|replace(':', '.')|float %}
+        {% if ftime >= 7.30 and ftime < 22.00 %}
+          {{ states('input_number.heat_set_point_home_day') }}
+        {% else %}
+          {{ states('input_number.heat_set_point_home_night') }}
+        {% endif %}
+    ac_home_temp_to_use:
+      friendly_name: "AC home temp to Use"
+      entity_id: sensor.time
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% set ftime = states('sensor.time')|replace(':', '.')|float %}
+        {% if ftime >= 7.30 and ftime < 22.00 %}
+          {{ states('input_number.ac_set_point_home_day') }}
+        {% else %}
+          {{ states('input_number.ac_set_point_home_night') }}
+        {% endif %}
+    auto_ac_home_temp_to_use:
+      friendly_name: "Auto AC home temp to Use"
+      entity_id: sensor.time
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% set ftime = states('sensor.time')|replace(':', '.')|float %}
+        {% if ftime >= 7.30 and ftime < 22.00 %}
+          {{ states('input_number.auto_high_set_point_home_day') }}
+        {% else %}
+          {{ states('input_number.auto_high_set_point_home_night') }}
+        {% endif %}
+    auto_heat_home_temp_to_use:
+      friendly_name: "Auto heat home temp to Use"
+      entity_id: sensor.time
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% set ftime = states('sensor.time')|replace(':', '.')|float %}
+        {% if ftime >= 7.30 and ftime < 22.00 %}
+          {{ states('input_number.auto_low_set_point_home_day') }}
+        {% else %}
+          {{ states('input_number.auto_low_set_point_home_night') }}
+        {% endif %}
+    heat_away_temp_to_use:
+      friendly_name: "Heat away temp to Use"
+      entity_id: sensor.time
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% set ftime = states('sensor.time')|replace(':', '.')|float %}
+        {% if ftime >= 7.30 and ftime < 22.00 %}
+          {{ states('input_number.heat_set_point_away_day') }}
+        {% else %}
+          {{ states('input_number.heat_set_point_away_night') }}
+        {% endif %}
+    ac_away_temp_to_use:
+      friendly_name: "AC away temp to Use"
+      entity_id: sensor.time
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% set ftime = states('sensor.time')|replace(':', '.')|float %}
+        {% if ftime >= 7.30 and ftime < 22.00 %}
+          {{ states('input_number.ac_set_point_away_day') }}
+        {% else %}
+          {{ states('input_number.ac_set_point_away_night') }}
+        {% endif %}
+    auto_ac_away_temp_to_use:
+      friendly_name: "Auto AC away temp to Use"
+      entity_id: sensor.time
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% set ftime = states('sensor.time')|replace(':', '.')|float %}
+        {% if ftime >= 7.30 and ftime < 22.00 %}
+          {{ states('input_number.auto_high_set_point_away_day') }}
+        {% else %}
+          {{ states('input_number.auto_high_set_point_away_night') }}
+        {% endif %}
+    auto_heat_away_temp_to_use:
+      friendly_name: "Auto heat away temp to Use"
+      entity_id: sensor.time
+      unit_of_measurement: 'degrees'
+      value_template: >-
+        {% set ftime = states('sensor.time')|replace(':', '.')|float %}
+        {% if ftime >= 7.30 and ftime < 22.00 %}
+          {{ states('input_number.auto_low_set_point_away_day') }}
+        {% else %}
+          {{ states('input_number.auto_low_set_point_away_night') }}
+        {% endif %}
 - platform: ring
 - platform: openweathermap
   api_key: !secret openweathermap_api_key
