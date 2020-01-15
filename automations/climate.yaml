@@ -9,9 +9,16 @@ action:
       entity_id: all
       temperature: >-
         {% if is_state('sensor.hvac_mode', 'heat') -%}
-          sensor.heat_home_temp_to_use|int
+          {% if states('sensor.heat_home_temp_to_use')|float != states('sensor.hvac_set_temp')|float -%}
+            sensor.heat_home_temp_to_use|float
+          {%- endif %}
         {% elif is_state('sensor.hvac_mode', 'cool') %}
-          sensor.ac_home_temp_to_use|int
-        {% elif is_state('sensor.hvac_mode', 'auto') %}
-          # make this do something
+          {% if states('sensor.ac_home_temp_to_use')|float != states('sensor.hvac_set_temp')|float -%}
+            sensor.ac_home_temp_to_use|float
+          {%- endif %}
+        {% elif is_state('sensor.hvac_mode', 'heat_cool') %}
+          {% if states('sensor.auto_ac_home_temp_to_use')|float != states('sensor.hvac_set_temp_low')|float or states('sensor.auto_heat_home_temp_to_use')|float != states('sensor.hvac_set_temp_high')|float -%}
+            #sensor.auto_ac_home_temp_to_use
+            #sensor.auto_heat_home_temp_to_use
+          {%- endif %}
         {%- endif %}

@@ -1,0 +1,20 @@
+alias: OK To Wake
+initial_state: True
+trigger:
+  platform: time
+  at: '07:00:00'
+condition:
+  condition: state 
+  entity_id: 'group.bedtimephones'
+  state: 'home'
+action:
+  - service: switch.turn_on
+    entity_id: switch.boys_lamp
+  - service: light.turn_on
+    data:
+      entity_id: light.boy_s_room
+      brightness_pct: 100
+  - service: notify.pushbullet
+    data:
+      message: "Boy's ceiling & boy's lamp turned on"
+      title: "OK To Wake"

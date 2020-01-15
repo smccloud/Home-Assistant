@@ -138,10 +138,6 @@ tplink:
 
 system_health:
 
-ring:
-  username: !secret ring_username
-  password: !secret ring_password
-
 downloader:
   download_dir: downloads
 

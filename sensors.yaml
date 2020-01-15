@@ -24,6 +24,15 @@
   port: 443
 - platform: template
   sensors:
+    hvac_set_temp:
+      friendly_name: "HVAC Set Temp"
+      value_template: "{{ states.climate.radio_thermostat_company_of_america_ct101_thermostat_mode.attributes.temperature|float }}"
+    hvac_set_temp_low:
+      friendly_name: "HVAC Set Temp Low"
+      value_template: "{{ states.climate.radio_thermostat_company_of_america_ct101_thermostat_mode.attributes.target_temp_low|float }}"
+    hvac_set_temp_high:
+      friendly_name: "HVAC Set Temp High"
+      value_template: "{{ states.climate.radio_thermostat_company_of_america_ct101_thermostat_mode.attributes.target_temp_high|float }}"
     hvac_mode:
       friendly_name: "HVAC Mode"
       value_template: "{{ states('climate.radio_thermostat_company_of_america_ct101_thermostat_mode') }}"
