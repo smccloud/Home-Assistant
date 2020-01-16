@@ -126,12 +126,6 @@ recorder:
 
 history:
 
-hue:
-  bridges:
-    - host: !secret hue_bridge
-      allow_unreachable: false
-      allow_hue_groups: true
-
 tplink:
   switch:
     - host: !secret shaun_nightstand_ip
