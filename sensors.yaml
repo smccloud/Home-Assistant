@@ -132,7 +132,6 @@
         {% else %}
           {{ states('input_number.auto_low_set_point_away_night') }}
         {% endif %}
-- platform: ring
 - platform: openweathermap
   api_key: !secret openweathermap_api_key
   monitored_conditions:

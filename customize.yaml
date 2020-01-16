@@ -39,13 +39,9 @@ group.version:
 group.all_lights:
   hidden: false
   friendly_name: All lights
-light.sengled_e11g13_0310615b_1:
-  friendly_name: Crawlspace
 sensor.furnacefilter:
   friendly_name: Furnace filter
 light.boys_room:
-  hidden: true
-light.boys_room_2:
   friendly_name: Boy's Room
 light.hue_white_lamp_1:
   friendly_name: BRLO
