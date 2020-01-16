@@ -19,10 +19,10 @@ action:
       temperature: >-
         {% if is_state('sensor.hvac_mode', 'heat') -%}
           {% if states('sensor.heat_home_temp_to_use')|float != states('sensor.hvac_set_temp')|float -%}
-            "{{ states('sensor.heat_home_temp_to_use')|float }}"
+            {{ states('sensor.heat_home_temp_to_use')|float }}
           {%- endif %}
         {% elif is_state('sensor.hvac_mode', 'cool') %}
           {% if states('sensor.ac_home_temp_to_use')|float != states('sensor.hvac_set_temp')|float -%}
-            "{{ states('sensor.ac_home_temp_to_use')|float }}"
+            {{ states('sensor.ac_home_temp_to_use')|float }}
           {%- endif %}
         {%- endif %}
