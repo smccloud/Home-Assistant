@@ -2,11 +2,11 @@ alias: Ring
 initial_state: True
 trigger:
   - platform: state
-    entity_id: binary_sensor.ring_front_door_ding
+    entity_id: binary_sensor.front_door_ding
     from: 'off'
     to: 'on'
   - platform: state
-    entity_id: binary_sensor.ring_front_door_motion
+    entity_id: binary_sensor.front_door_motion
     from: 'off'
     to: 'on'
 action:
