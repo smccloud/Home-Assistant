@@ -266,10 +266,4 @@ unifi:
       ssid_filter:
         !secret unifi_ssid
 
-panel_iframe:
-  ide:
-    title: IDE
-    icon: mdi:code-braces
-    url: !secret ide_url
-
 ios:
