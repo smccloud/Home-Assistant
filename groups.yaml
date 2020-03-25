@@ -1,14 +1,3 @@
-default_view:
-  name: Default View
-  icon: mdi:home
-  view: yes
-  entities:
-    - group.all_switches
-    - group.all_lights
-    - group.boysroom
-    - camera.boysroom
-    - group.version
-    - group.climate
 climate:
   name: Climate
   entities:
@@ -20,7 +9,6 @@ climate:
 devicetrackers:
   name: Device tracker groups
   icon: mdi:cellphone
-  view: yes
   entities:
     - group.thermostatdevices
     - group.bedtimephones
@@ -43,13 +31,11 @@ bedtimephones:
 automations:
   name: Automations
   icon: mdi:home-automation
-  view: yes 
   entities:
      - group.all_automations
 cameras:
   name: Cameras
   icon: mdi:cctv
-  view: yes
   entities:
     - camera.boysroom
 version:
@@ -61,7 +47,6 @@ version:
 boysroom:
   name: Boys Room Settings
   icon: mdi:settings
-  view: yes
   entities:
     - input_datetime.boys_room_evening
     - input_datetime.boys_room_morning
@@ -69,7 +54,6 @@ boysroom:
 shipping:
   name: Shipping Info
   icon: mdi:package-variant-closed
-  view: yes
   entities:
     - sensor.ups
     - sensor.fedex
