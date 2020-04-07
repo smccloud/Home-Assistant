@@ -110,10 +110,10 @@ camera: !include cameras.yaml
 
 light:
   - platform: group
-    name: boys_room
+    name: Boy's Room
     entities:
-      - light.sengled_e11g13_030257bf_1
-      - light.sengled_e11g13_03126970_1
+      - light.hue_white_lamp_1
+      - light.hue_white_lamp_2
 
 logger:
   default: error
