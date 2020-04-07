@@ -1,3 +1,8 @@
+boys_room:
+  name: Boys Room
+  entities:
+    - light.hue_white_lamp_1
+    - light.hue_white_lamp_2
 climate:
   name: Climate
   entities:
@@ -51,9 +56,3 @@ boysroom:
     - input_datetime.boys_room_evening
     - input_datetime.boys_room_morning
     - input_number.boys_room_limited_brightness
-shipping:
-  name: Shipping Info
-  icon: mdi:package-variant-closed
-  entities:
-    - sensor.ups
-    - sensor.fedex
