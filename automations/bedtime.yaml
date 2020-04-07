@@ -8,13 +8,11 @@ condition:
   entity_id: 'group.bedtimephones'
   state: 'home'
 action:
-  - service: switch.turn_on
-    entity_id: switch.boys_lamp
-  - service: light.turn_on
+  - service: hue.hue_activate_scene
     data:
-      entity_id: light.boy_s_room
-      brightness_pct: 10
+      group_name: "Boy's Room"
+      scene_name: Test
   - service: notify.pushbullet
     data:
-      message: "Boy's ceiling & boy's lamp turned on"
+      message: "Boy's ceiling lights turned on"
       title: "Bedtime"
