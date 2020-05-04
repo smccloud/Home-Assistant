@@ -25,7 +25,6 @@ homeassistant:
 
 # Enables the frontend
 frontend:
-  themes: !include_dir_merge_named themes/
 
 # Enables configuration UI
 config:
@@ -257,12 +256,5 @@ input_number:
     min: 60
     max: 80
     step: 1
-
-unifi:
-  controllers:
-    - host: !secret unifi_host
-      site: !secret unifi_site
-      ssid_filter:
-        !secret unifi_ssid
 
 ios:
