@@ -148,3 +148,24 @@
 - platform: tautulli
   api_key: !secret tautulli_api_key
   host: !secret tautulli_host
+- platform: sonarr
+  api_key: !secret sonarr_api_key
+  host: !secret sonarr_host
+  monitored_conditions:
+    - series
+    - upcoming
+    - wanted
+    - queue
+    - commands
+    - diskspace
+  days: 7
+- platform: radarr
+  api_key: !secret radarr_api_key
+  host: !secret radarr_host
+  monitored_conditions:
+    - movies
+    - upcoming
+    - commands
+    - diskspace
+    - status
+  days: 7

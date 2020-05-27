@@ -258,3 +258,8 @@ input_number:
     step: 1
 
 ios:
+
+nzbget:
+  host: !secret nzbget_host
+  username: !secret nzbget_user
+  password: !secret nzbget_password

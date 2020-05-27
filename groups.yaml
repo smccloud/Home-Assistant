@@ -15,16 +15,13 @@ devicetrackers:
 thermostatdevices:
   name: Temperature Devices
   entities:
-    - device_tracker.galaxy_note8
     - device_tracker.heidis_iphone
-    - device_tracker.smccloud_note8
-    - device_tracker.hmccloud_af05b130_ea4b_424e_9eaa_fb79f0b4a0ef_2
-    - device_tracker.oneplus_6t
-    - device_tracker.bobs_iphone
+    - device_tracker.oneplus_7t_3
+    - device_tracker.shaun_7t
 bedtimephones:
   name: Bedtime Devices
   entities:
-    - device_tracker.galaxy_note8
+    - device_tracker.oneplus_7t_3
     - device_tracker.heidis_iphone
     - device_tracker.oneplus_6t
     - device_tracker.bobs_iphone
