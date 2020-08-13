@@ -16,12 +16,12 @@ thermostatdevices:
   name: Temperature Devices
   entities:
     - device_tracker.heidis_iphone
-    - device_tracker.oneplus_7t_3
+    - device_tracker.oneplus_7t_4
     - device_tracker.shaun_7t
 bedtimephones:
   name: Bedtime Devices
   entities:
-    - device_tracker.oneplus_7t_3
+    - device_tracker.oneplus_7t_4
     - device_tracker.heidis_iphone
     - device_tracker.oneplus_6t
     - device_tracker.bobs_iphone
