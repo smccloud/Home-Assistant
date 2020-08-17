@@ -52,6 +52,9 @@ updater:
 # Discover some devices automatically
 discovery:
 
+# Enable the mobile app stuff
+mobile_app:
+
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
@@ -120,7 +123,8 @@ logger:
 climate:
 
 recorder:
-  purge_keep_days: 30
+  purge_keep_days: 90
+  db_url: !secret recorder_url
 
 history:
 
