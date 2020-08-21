@@ -23,8 +23,6 @@ bedtimephones:
   entities:
     - device_tracker.oneplus_7t_4
     - device_tracker.heidis_iphone
-    - device_tracker.oneplus_6t
-    - device_tracker.bobs_iphone
 automations:
   name: Automations
   icon: mdi:home-automation
