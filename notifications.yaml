@@ -10,6 +10,3 @@
   recipient:
     - shaun.thomas.mccloud@gmail.com
   sender_name: McCloud Home Assistant
-- name: pushbullet
-  platform: pushbullet
-  api_key: !secret pushbullet_api_key
