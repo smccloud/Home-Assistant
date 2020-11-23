@@ -18,7 +18,3 @@ action:
       entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
       target_temp_high: >-
         {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_mode', 'target_temp_high')|int(73) + 2 }}
-  - service: notify.pushbullet
-    data:
-      title: 'CT101 thermostat set temp changed due to night'
-      message: ''

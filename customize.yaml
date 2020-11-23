@@ -1,10 +1,8 @@
-device_tracker.smccloud_note8:
-  friendly_name: Shaun's Samsung Galaxy Note 8
-device_tracker.d02b207bd718:
-  friendly_name: Jane's iPhone
-device_tracker.hmccloud_af05b130_ea4b_424e_9eaa_fb79f0b4a0ef_2:
-  friendly_name: Heidi's iPhone XR
-device_tracker.heidis_iphone:
+device_tracker.iphone_2:
+  friendly_name: Shaun
+device_tracker.heidis_iphone_3:
+  friendly_name: Heidi
+device_tracker.heidis_iphone_4:
   friendly_name: Heidi's Phone
 device_tracker.b0a73752458b:
   friendly_name: Bedroom Roku

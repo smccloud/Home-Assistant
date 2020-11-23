@@ -12,7 +12,3 @@ action:
     data:
       entity_id: light.boy_s_room
       brightness_pct: 10
-  - service: notify.pushbullet
-    data:
-      message: "Boy's ceiling lights turned on"
-      title: "Bedtime"

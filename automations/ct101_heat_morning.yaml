@@ -12,7 +12,3 @@ action:
     data_template:
       entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
       temperature: "{{ states('input_number.heat_set_point_home_day') }}"
-  - service: notify.pushbullet
-    data:
-      title: 'CT101 thermostat set temp changed due to morning'
-      message: ''
