@@ -18,6 +18,7 @@ thermostatdevices:
     - device_tracker.heidis_iphone_3
     - device_tracker.iphone_2
     - device_tracker.heidis_iphone_4
+    - device_tracker.iphone_2
 bedtimephones:
   name: Bedtime Devices
   entities:
