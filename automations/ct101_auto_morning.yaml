@@ -26,4 +26,7 @@ action:
         {% else %}
           {{ states('input_number.auto_high_set_point_away_day') }}
         {% endif %}
-
+  - service: notify.mobile_app_Shaun_iPhone
+    data:
+      title: "Morning"
+      message: "Setting target temps for the day"

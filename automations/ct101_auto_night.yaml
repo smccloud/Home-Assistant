@@ -26,3 +26,7 @@ action:
         {% else %}
           {{ states('input_number.auto_high_set_point_away_night') }}
         {% endif %}
+  - service: notify.mobile_app_Shaun_iPhone
+    data:
+      title: "Night time"
+      message: "Setting target temps for the night"
