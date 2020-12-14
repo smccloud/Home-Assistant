@@ -3,8 +3,8 @@ initial_state: True
 trigger:
   platform: state
   entity_id: group.thermostatdevices
-  from: "not_home"
-  to: "home"
+  from: 'not_home'
+  to: 'home'
 condition:
   - condition: state
     entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
