@@ -10,16 +10,12 @@ condition:
 action:
   - service: climate.set_temperature
     data_template:
-      data: >
+      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+      temperature: >
         {% if is_state('group.thermostatdevices', 'home') %}
-          entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-          temperature: "{{ states('input_number.heat_set_point_home_day') }}"
-        {% elif is_state('group.thermostatdevices', 'not_home') %}
-          entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-          temperature: "{{ states('input_number.heat_set_point_away_day') }}"
+          {{ states('input_number.heat_set_point_home_day') }}
         {% else %}
-          entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-          temperature: "{{ states('input_number.heat_set_point_home_day') }}"
+          {{ states('input_number.heat_set_point_away_day') }}
         {% endif %}
   - service: notify.mobile_app_Shaun_iPhone
     data:

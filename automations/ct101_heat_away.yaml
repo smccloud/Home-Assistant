@@ -12,18 +12,14 @@ condition:
 action:
   - service: climate.set_temperature
     data_template:
-      data: >
-        {% if (strptime((states.sensor.time.state),"%H:%M") >= strptime(("22:00"),"%H:%M") and strptime((states.sensor.time.state),"%H:%M") < strptime(("07:30"),"%H:%M")) %}
-          entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-          temperature: "{{ states('input_number.heat_set_point_away_night') }}"
-        {% elif (strptime((states.sensor.time.state),"%H:%M") >= strptime(("07:30"),"%H:%M") and strptime((states.sensor.time.state),"%H:%M") < strptime(("22:00"),"%H:%M")) %}
-          entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-          temperature: "{{ states('input_number.heat_set_point_away_day') }}"
+      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+      temperature: >
+        {% if '07:30' <= states('sensor.time') < '22:00' %}
+          {{ states('input_number.heat_set_point_away_day') }}
         {% else %}
-          entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-          temperature: "{{ states('input_number.heat_set_point_away_night') }}"
+          {{ states('input_number.heat_set_point_away_night') }}
         {% endif %}
   - service: notify.mobile_app_Shaun_iPhone
     data:
       title: "Away"
-      message: "Lowering heat due to phones going away"
+      message: "Lowering heat due to phones leaving"
