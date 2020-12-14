@@ -19,5 +19,5 @@ action:
         {% endif %}
   - service: notify.mobile_app_Shaun_iPhone
     data:
-      title: "Nighttime"
+      title: "Night time"
       message: "Lowering temp for night time"

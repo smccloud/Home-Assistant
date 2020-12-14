@@ -22,4 +22,4 @@ action:
   - service: notify.mobile_app_Shaun_iPhone
     data:
       title: "Away"
-      message: "Lowering heat due to phones leaving"
+      message: "Lowering temp due to phones leaving"

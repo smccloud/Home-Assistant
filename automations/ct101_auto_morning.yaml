@@ -11,10 +11,19 @@ action:
   - service: climate.set_temperature
     data_template:
       entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-      temperature: >-
-        {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_mode', 'target_temp_low')|int(71) + 2 }}
+      target_temp_low: >
+        {% if is_state('group.thermostatdevices', 'home') %}
+          {{ states('input_number.auto_low_set_point_home_day') }}
+        {% else %}
+          {{ states('input_number.auto_low_set_point_away_day') }}
+        {% endif %}
   - service: climate.set_temperature
     data_template:
       entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-      target_temp_high: >-
-        {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_mode', 'target_temp_high')|int(73) - 2 }}
+      target_temp_high: >
+        {% if is_state('group.thermostatdevices', 'home') %}
+          {{ states('input_number.auto_high_set_point_home_day') }}
+        {% else %}
+          {{ states('input_number.auto_high_set_point_away_day') }}
+        {% endif %}
+

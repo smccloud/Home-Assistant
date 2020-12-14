@@ -11,5 +11,13 @@ action:
   - service: climate.set_temperature
     data_template:
       entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
-      temperature: >-
-        {{ state_attr('climate.radio_thermostat_company_of_america_ct101_thermostat_mode', 'temperature')|int(73) + 2 }}
+      temperature: >
+        {% if is_state('group.thermostatdevices', 'home') %}
+          {{ states('input_number.ac_set_point_home_night') }}
+        {% else %}
+          {{ states('input_number.ac_set_point_away_night') }}
+        {% endif %}
+  - service: notify.mobile_app_Shaun_iPhone
+    data:
+      title: "Nighttime"
+      message: "Raising temp for night time"

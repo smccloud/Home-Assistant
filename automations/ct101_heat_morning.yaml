@@ -20,4 +20,4 @@ action:
   - service: notify.mobile_app_Shaun_iPhone
     data:
       title: "Morning"
-      message: "Raising heat for the day"
+      message: "Raising temp for the day"
