@@ -1,6 +1,6 @@
 device_tracker.iphone_2:
   friendly_name: Shaun
-device_tracker.heidis_iphone_3:
+device_tracker.iphone:
   friendly_name: Heidi
 device_tracker.heidis_iphone_4:
   friendly_name: Heidi's iPhone
