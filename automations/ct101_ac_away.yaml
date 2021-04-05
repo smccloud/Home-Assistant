@@ -1,0 +1,25 @@
+alias: CT101 AC Set Away
+initial_state: True
+trigger:
+  platform: state
+  entity_id: group.thermostatdevices
+  from: 'home'
+  to: 'not_home'
+condition:
+  - condition: state
+    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+    state: cool
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+      temperature: >
+        {% if '07:30' <= states('sensor.time') < '22:00' %}
+          {{ states('input_number.ac_set_point_away_day') }}
+        {% else %}
+          {{ states('input_number.ac_set_point_away_night') }}
+        {% endif %}
+  - service: notify.mobile_app_Shaun_iPhone
+    data:
+      title: "Away"
+      message: "Lowering temp due to phones leaving"
