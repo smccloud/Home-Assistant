@@ -1,4 +1,3 @@
-
 - platform: mqtt
   name: boysroomtemp
   state_topic: "tele/boysroom/SENSOR"
@@ -132,19 +131,6 @@
         {% else %}
           {{ states('input_number.auto_low_set_point_away_night') }}
         {% endif %}
-- platform: openweathermap
-  api_key: !secret openweathermap_api_key
-  monitored_conditions:
-    - weather
-    - temperature
-    - wind_speed
-    - wind_bearing
-    - humidity
-    - pressure
-    - clouds
-    - rain
-    - snow
-    - weather_code
 - platform: tautulli
   api_key: !secret tautulli_api_key
   host: !secret tautulli_host
