@@ -15,15 +15,13 @@ devicetrackers:
 thermostatdevices:
   name: Temperature Devices
   entities:
-    - device_tracker.iphone
-    - device_tracker.iphone_2
     - device_tracker.heidis_iphone_4
     - device_tracker.shauns_iphone
 bedtimephones:
   name: Bedtime Devices
   entities:
-    - device_tracker.iphone
-    - device_tracker.iphone_2
+    - device_tracker.heidis_iphone_4
+    - device_tracker.shauns_iphone
 automations:
   name: Automations
   icon: mdi:home-automation
