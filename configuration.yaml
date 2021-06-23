@@ -9,6 +9,7 @@ homeassistant:
   time_zone: America/Chicago
   customize: !include customize.yaml
   packages: !include_dir_named packages
+
 frontend:
 
 config:
