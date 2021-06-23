@@ -22,4 +22,4 @@ action:
   - service: notify.mobile_app_Shaun_iPhone
     data:
       title: "Home"
-      message: "Raising temp due to phones getting home"
+      message: "Lowering temp due to phones getting home"

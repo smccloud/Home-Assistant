@@ -265,3 +265,7 @@ nzbget:
 
 downloader:
   download_dir: /ringdownloads
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: !secret wifi_range
