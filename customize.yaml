@@ -55,3 +55,7 @@ sensor.ssl_certificate_expiry:
   friendly_name: SSL Certification Expiration
 light.sengled_e11_g13_70691203_level_on_off:
   friendly_name: Crochet Light
+device_tracker.device_name_2:
+  friendly_name: Heidi's Phone
+device_tracker.device_name_1:
+  friendly_name: Shaun's Phone
