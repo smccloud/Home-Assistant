@@ -1,3 +1,4 @@
-- platform: generic
-  stream_source: !secret boysroomurl
+- platform: ffmpeg
   name: boysroom
+  input: -rtsp_transport http -i rtsp://McCloud:McCloud@172.16.10.3/live
+  extra_arguments: -pred 1 -q:v 2
