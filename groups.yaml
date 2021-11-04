@@ -19,7 +19,7 @@ thermostatdevices:
     - device_tracker.heidis_iphone_4
     - device_tracker.nmap_tracker_dc_b5_4f_5f_41_f0
     - device_tracker.nmap_tracker_44_90_bb_05_c0_cd
-    - device_tracker.nmap_tracker_b4_56_e3_a_f8_1f
+    - device_tracker.nmap_tracker_b4_56_e3_0a_f8_1f
 bedtimephones:
   name: Bedtime Devices
   entities:
@@ -27,7 +27,7 @@ bedtimephones:
     - device_tracker.heidis_iphone_4
     - device_tracker.nmap_tracker_dc_b5_4f_5f_41_f0
     - device_tracker.nmap_tracker_44_90_bb_05_c0_cd
-    - device_tracker.nmap_tracker_b4_56_e3_a_f8_1f
+    - device_tracker.nmap_tracker_b4_56_e3_0a_f8_1f
 automations:
   name: Automations
   icon: mdi:home-automation
