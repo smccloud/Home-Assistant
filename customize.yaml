@@ -65,3 +65,7 @@ device_tracker.apple_05_c0_cd:
   friendly_name: Heidi's iPhone
 device_tracker.nmap_tracker_b4_56_e3_0a_f8_1f:
   friendly_name: Mom's iPhone
+sensor.mechanicalroomtemp:
+  friendly_name: Mechanical Room Temperature
+sensor.mechanicalroomhumidity:
+  friendly_name: Mechanical Room Humidity
