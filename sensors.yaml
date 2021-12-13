@@ -16,6 +16,18 @@
   name: mechanicalroomhumidity
   state_topic: "mechanicalroom/humidity"
   unit_of_measurement: "%"
+- platform: mqtt
+  name: garagetempf
+  state_topic: "garage/temperature_f"
+  unit_of_measurement: "°F"
+- platform: mqtt
+  name: garagetempc
+  state_topic: "garage/temperature_c"
+  unit_of_measurement: "°C"
+- platform: mqtt
+  name: garagehumidity
+  state_topic: "garage/humidity"
+  unit_of_measurement: "%"
 - platform: time_date
   display_options:
     - 'time'
