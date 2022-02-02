@@ -29,6 +29,10 @@ map:
 
 sun:
 
+recorder:
+  purge_keep_days: 30
+  auto_purge : true
+
 sensor: !include sensors.yaml
 
 tts:
@@ -77,10 +81,6 @@ logger:
   default: error
 
 climate:
-
-recorder:
-  purge_keep_days: 90
-  db_url: !secret recorder_url
 
 history:
 
