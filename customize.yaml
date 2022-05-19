@@ -57,10 +57,13 @@ device_tracker.device_name_2:
   friendly_name: Heidi's Phone
 device_tracker.device_name_1:
   friendly_name: Shaun's Phone
+  icon: mdi:cellphone
 device_tracker.device_name_2:
   friendly_name: Heidi's Phone
+  icon: mdi:cellphone
 device_tracker.device_name_3:
   friendly_name: Sharon's Phone
+  icon: mdi:cellphone
 device_tracker.nmap_tracker_dc_b5_4f_5f_41_f0:
   friendly_name: Shaun's iPhone
 sensor.mechanicalroomtemp:
