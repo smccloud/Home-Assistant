@@ -1,16 +1,16 @@
-alias: CT101 Heat Set Night
+alias: Heat Set Night
 initial_state: True
 trigger:
   platform: time
   at: '22:00:00'
 condition:
   - condition: state
-    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+    entity_id: climate.z_wave_thermostat
     state: heat
 action:
   - service: climate.set_temperature
     data_template:
-      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+      entity_id: climate.z_wave_thermostat
       temperature: >
         {% if is_state('group.thermostatdevices', 'home') %}
           {{ states('input_number.heat_set_point_home_night') }}

@@ -1,16 +1,16 @@
-alias: CT101 Auto Set Night
+alias: Auto Set Night
 initial_state: True
 trigger:
   platform: time
   at: '22:00:00'
 condition:
   - condition: state
-    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+    entity_id: climate.z_wave_thermostat
     state: heat_cool
 action:
   - service: climate.set_temperature
     data_template:
-      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+      entity_id: climate.z_wave_thermostat
       target_temp_low: >
         {% if is_state('group.thermostatdevices', 'home') %}
           {{ states('input_number.auto_low_set_point_home_night') }}
@@ -19,7 +19,7 @@ action:
         {% endif %}
   - service: climate.set_temperature
     data_template:
-      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+      entity_id: climate.z_wave_thermostat
       target_temp_high: >
         {% if is_state('group.thermostatdevices', 'home') %}
           {{ states('input_number.auto_high_set_point_home_night') }}

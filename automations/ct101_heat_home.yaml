@@ -1,4 +1,4 @@
-alias: CT101 Heat Set Home
+alias: Heat Set Home
 initial_state: True
 trigger:
   platform: state
@@ -7,12 +7,12 @@ trigger:
   to: 'home'
 condition:
   - condition: state
-    entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+    entity_id: climate.z_wave_thermostat
     state: heat
 action:
   - service: climate.set_temperature
     data_template:
-      entity_id: climate.radio_thermostat_company_of_america_ct101_thermostat_mode
+      entity_id: climate.z_wave_thermostat
       temperature: >
         {% if '07:30' <= states('sensor.time') < '22:00' %}
           {{ states('input_number.heat_set_point_home_day') }}

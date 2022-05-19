@@ -53,18 +53,16 @@ light.hue_white_lamp_3:
   hidden: true
 sensor.ssl_certificate_expiry:
   friendly_name: SSL Certification Expiration
-light.sengled_e11_g13_70691203_level_on_off:
-  friendly_name: Crochet Light
 device_tracker.device_name_2:
   friendly_name: Heidi's Phone
 device_tracker.device_name_1:
   friendly_name: Shaun's Phone
+device_tracker.device_name_2:
+  friendly_name: Heidi's Phone
+device_tracker.device_name_3:
+  friendly_name: Sharon's Phone
 device_tracker.nmap_tracker_dc_b5_4f_5f_41_f0:
   friendly_name: Shaun's iPhone
-device_tracker.apple_05_c0_cd:
-  friendly_name: Heidi's iPhone
-device_tracker.nmap_tracker_b4_56_e3_0a_f8_1f:
-  friendly_name: Mom's iPhone
 sensor.mechanicalroomtemp:
   friendly_name: Mechanical Room Temperature
 sensor.mechanicalroomhumidity:
