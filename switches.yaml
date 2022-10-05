@@ -1,11 +1,1 @@
-- platform: mqtt
-  name: boys_lamp
-  state_topic: "stat/boysroom/POWER"
-  command_topic: "cmnd/boysroom/POWER"
-  availability_topic: "tele/boysroom/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: true
+

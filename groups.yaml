@@ -17,17 +17,17 @@ thermostatdevices:
   entities:
     - device_tracker.shauns_iphone
     - device_tracker.heidis_iphone_4
-    - device_tracker.device_name_1
-    - device_tracker.device_name_2
-    - device_tracker.device_name_3
+#    - device_tracker.device_name_1
+#    - device_tracker.device_name_2
+#    - device_tracker.device_name_3
 bedtimephones:
   name: Bedtime Devices
   entities:
     - device_tracker.shauns_iphone
     - device_tracker.heidis_iphone_4
-    - device_tracker.device_name_1
-    - device_tracker.device_name_2
-    - device_tracker.device_name_3
+#    - device_tracker.device_name_1
+#    - device_tracker.device_name_2
+#    - device_tracker.device_name_3
 automations:
   name: Automations
   icon: mdi:home-automation

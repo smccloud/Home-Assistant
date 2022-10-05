@@ -16,9 +16,6 @@ config:
 
 http:
 
-updater:
-  include_used_components: true
-
 discovery:
 
 mobile_app:
@@ -46,11 +43,42 @@ automation: !include_dir_list automations/
 script: !include_dir_list scripts/
 
 mqtt:
-  broker: !secret mqtt_broker
-  port: 1883
-  username: !secret mqtt_user
-  password: !secret mqtt_pass
-  discovery: true
+  sensor:
+    - name: boysroomtemp
+      state_topic: "tele/boysroom/SENSOR"
+      value_template: "{{ value_json['AM2301'].Temperature }}"
+      unit_of_measurement: "°F"
+    - name: boysroomhumidity
+      state_topic: "tele/boysroom/SENSOR"
+      value_template: "{{ value_json['AM2301'].Humidity }}"
+      unit_of_measurement: "%"
+    - name: mechanicalroomtemp
+      state_topic: "mechanicalroom/temperature"
+      unit_of_measurement: "°F"
+    - name: mechanicalroomhumidity
+      state_topic: "mechanicalroom/humidity"
+      unit_of_measurement: "%"
+    - name: garagetempf
+      state_topic: "garage/temperature_f"
+      unit_of_measurement: "°F"
+    - name: garagetempc
+      state_topic: "garage/temperature_c"
+      unit_of_measurement: "°C"
+    - name: garagehumidity
+      state_topic: "garage/humidity"
+      unit_of_measurement: "%"
+  switch:
+    - name: boys_lamp
+      state_topic: "stat/boysroom/POWER"
+      command_topic: "cmnd/boysroom/POWER"
+      availability_topic: "tele/boysroom/LWT"
+      qos: 1
+      payload_on: "ON"
+      payload_off: "OFF"
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      retain: true
+
 
 zone:
   name: Home
@@ -215,11 +243,6 @@ input_number:
     step: 1
 
 ios:
-
-nzbget:
-  host: !secret nzbget_host
-  username: !secret nzbget_user
-  password: !secret nzbget_password
 
 downloader:
   download_dir: /ringdownloads
