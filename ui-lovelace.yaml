@@ -19,7 +19,6 @@ views:
         title: All lights
         type: entities
       - entities:
-          - entity: sensor.uptime
           - entity: sensor.ssl_certificate_expiry
         show_header_toggle: false
         title: Home Assistant Info

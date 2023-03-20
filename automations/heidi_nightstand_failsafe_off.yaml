@@ -5,8 +5,4 @@ trigger:
   at: '03:00:00'
 action:
   - service: switch.turn_off
-    entity_id: switch.heidi_nightstand
-  - service: notify.pushbullet
-    data:
-      message: "Heidi's nightstand failsafe off"
-      title: "Heidi's nightstand failsafe off"
+    entity_id: light.heidi_nightstand

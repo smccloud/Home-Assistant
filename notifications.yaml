@@ -8,5 +8,5 @@
   username: !secret gmail_address
   password: !secret gmail_password
   recipient:
-    - shaun.thomas.mccloud@gmail.com
+    - !secret gmail_address
   sender_name: McCloud Home Assistant

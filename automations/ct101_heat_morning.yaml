@@ -17,7 +17,3 @@ action:
         {% else %}
           {{ states('input_number.heat_set_point_away_day') }}
         {% endif %}
-  - service: notify.mobile_app_Shaun_iPhone
-    data:
-      title: "Morning"
-      message: "Raising temp for the day"

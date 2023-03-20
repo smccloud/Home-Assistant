@@ -17,7 +17,3 @@ action:
         {% else %}
           {{ states('input_number.ac_set_point_away_night') }}
         {% endif %}
-  - service: notify.mobile_app_Shaun_iPhone
-    data:
-      title: "Nighttime"
-      message: "Raising temp for night time"

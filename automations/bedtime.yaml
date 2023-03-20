@@ -12,7 +12,3 @@ action:
     data:
       entity_id: light.boy_s_room
       brightness_pct: 10
-  - service: notify.mobile_app_Shaun_iPhone
-    data:
-      title: "Bedtime"
-      message: "Boy's room light turned on"

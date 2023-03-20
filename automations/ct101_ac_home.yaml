@@ -18,8 +18,4 @@ action:
           {{ states('input_number.ac_set_point_home_day') }}
         {% else %}
           {{ states('input_number.ac_set_point_home_night') }}
-        {% endif %}
-  - service: notify.mobile_app_Shaun_iPhone
-    data:
-      title: "Home"
-      message: "Lowering temp due to phones getting home"
+        {% endif %}`

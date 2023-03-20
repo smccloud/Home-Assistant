@@ -19,7 +19,3 @@ action:
         {% else %}
           {{ states('input_number.heat_set_point_home_night') }}
         {% endif %}
-  - service: notify.mobile_app_Shaun_iPhone
-    data:
-      title: "Home"
-      message: "Raising temp due to phones getting home"

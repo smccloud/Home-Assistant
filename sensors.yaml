@@ -6,7 +6,6 @@
     - 'time_date'
     - 'time_utc'
     - 'beat'
-- platform: uptime
 - platform: cert_expiry
   host: !secret cert_url
   port: 443

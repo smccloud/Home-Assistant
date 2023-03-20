@@ -19,7 +19,3 @@ action:
         {% else %}
           {{ states('input_number.heat_set_point_away_night') }}
         {% endif %}
-  - service: notify.mobile_app_Shaun_iPhone
-    data:
-      title: "Away"
-      message: "Lowering temp due to phones leaving"

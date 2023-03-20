@@ -41,9 +41,7 @@ cameras:
 version:
   name: Server info
   entities:
-    - sensor.uptime
     - sensor.ssl_certificate_expiry
-    - sensor.CPU_Temperature
 boysroom:
   name: Boys Room Settings
   icon: mdi:settings
