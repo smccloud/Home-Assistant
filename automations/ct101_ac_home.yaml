@@ -18,4 +18,4 @@ action:
           {{ states('input_number.ac_set_point_home_day') }}
         {% else %}
           {{ states('input_number.ac_set_point_home_night') }}
-        {% endif %}`
+        {% endif %}
