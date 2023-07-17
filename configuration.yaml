@@ -128,10 +128,6 @@ climate:
 
 history:
 
-tplink:
-  switch:
-    - host: !secret shaun_nightstand_ip
-
 system_health:
 
 ffmpeg:
