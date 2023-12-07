@@ -1,8 +1,0 @@
-alias: Reset Master Bedroom Lights
-action:
-  - service: light.turn_on
-    target:
-      entity_id: group.masterbedroom
-    data:
-      brightness_pct: 30
-      rgb_color: [0,0,100]

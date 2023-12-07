@@ -2,9 +2,9 @@ alias: Bedtime
 initial_state: True
 trigger:
   platform: time
-  at: '19:15:00'
+  at: input_datetime.bedtime
 condition:
-  condition: state 
+  condition: state
   entity_id: 'group.bedtimephones'
   state: 'home'
 action:
@@ -12,3 +12,11 @@ action:
     data:
       entity_id: light.boy_s_room
       brightness_pct: 10
+  - service: light.turn_on
+    data:
+      entity_id: group.masterbedroom
+      brightness_pct: 50
+      rgb_color:
+        - 0
+        - 0
+        - 0

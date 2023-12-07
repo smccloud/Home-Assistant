@@ -15,7 +15,7 @@ devicetrackers:
 thermostatdevices:
   name: Temperature Devices
   entities:
-    - device_tracker.pixel_6a_7
+    - device_tracker.pixel_6a_11
     - device_tracker.heidis_iphone_4
 #    - device_tracker.device_name_1
 #    - device_tracker.device_name_2
@@ -23,7 +23,7 @@ thermostatdevices:
 bedtimephones:
   name: Bedtime Devices
   entities:
-    - device_tracker.pixel_6a_7
+    - device_tracker.pixel_6a_11
     - device_tracker.heidis_iphone_4
 #    - device_tracker.device_name_1
 #    - device_tracker.device_name_2

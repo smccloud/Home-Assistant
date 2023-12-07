@@ -1,0 +1,35 @@
+################################################
+## Script
+################################################
+
+script:
+  boys_room_ceiling:
+    alias: "Boy's Room Ceiling"
+    sequence:
+      - service_template: >-
+          {% set limited_buttons = ['kids_button'] %}
+          {% set time = now().strftime('%H.%M')|float %}
+          {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
+          {% set evening = states.input_datetime.boys_room_evening.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
+          {% if (button in limited_buttons and not morning <= time < evening) or is_state('light.boy_s_room', 'on') %}
+            script.light_turn_off_proxy
+          {% else %}
+            light.turn_on
+          {% endif %}
+        data_template:
+          entity_id: light.boy_s_room
+          brightness: >-
+            {% set time = now().strftime('%H.%M')|float %}
+            {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
+            {% set evening = states.input_datetime.boys_room_evening.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
+            {% if morning < time < evening %}
+              255
+            {% else %}
+              {{ (255 * (states('input_number.boys_room_limited_brightness')|float / 100))|round }}
+            {% endif %}
+  light_turn_off_proxy:
+    alias: "Light Proxy"
+    sequence:
+      - service: light.turn_off
+        data_template:
+          entity_id: "{{ entity_id }}"

@@ -23,14 +23,6 @@
     hvac_mode:
       friendly_name: "HVAC Mode"
       value_template: "{{ states('climate.radio_thermostat_company_of_america_ct101_thermostat_mode') }}"
-    living_room_temp:
-      friendly_name: "Living room temperature"
-      unit_of_measurement: "°F"
-      value_template: "{{ states('sensor.radio_thermostat_company_of_america_ct101_thermostat_temperature') }}"
-    living_room_humidity:
-      friendly_name: "Living room humidity"
-      unit_of_measurement: "%"
-      value_template: "{{ states('sensor.radio_thermostat_company_of_america_ct101_thermostat_relative_humidity') }}"
     heat_home_temp_to_use:
       friendly_name: "Heat home temp to Use"
       entity_id: sensor.time

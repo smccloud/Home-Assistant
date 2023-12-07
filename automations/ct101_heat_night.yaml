@@ -2,7 +2,7 @@ alias: Heat Set Night
 initial_state: True
 trigger:
   platform: time
-  at: '22:00:00'
+  at: input_datetime.climate_night
 condition:
   - condition: state
     entity_id: climate.z_wave_thermostat

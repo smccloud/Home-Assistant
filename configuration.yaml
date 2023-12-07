@@ -139,6 +139,10 @@ input_datetime:
     has_time: true
   climate_morning:
     has_time: true
+  resetlights:
+    has_time: true
+  bedtime:
+    has_time: true
 
 input_number:
   ac_set_point_home_day:
@@ -261,3 +265,8 @@ downloader:
 
 device_tracker: !include_dir_list device_tracker/
 binary_sensor: !include_dir_merge_list binary_sensors/
+
+opnsense:
+  url: !secret opnsense_url
+  api_secret: !secret opnsense_secret
+  api_key: !secret opnsense_key

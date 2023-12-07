@@ -2,7 +2,7 @@ alias: AC Set Morning
 initial_state: True
 trigger:
   platform: time
-  at: '07:30:00'
+  at: input_datetime.climate_morning
 condition:
   - condition: state
     entity_id: climate.z_wave_thermostat

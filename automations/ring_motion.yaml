@@ -10,4 +10,5 @@ action:
 - service: downloader.download_file
   data:
     url: "{{ state_attr('camera.front_door_2', 'video_url') }}"
-    filename: "{{now()}}.mpg"
+    subdir: "motion"
+    filename: "{{ now().strftime('%H-%M-%S')  }}.mpg"
