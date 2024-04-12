@@ -5,7 +5,6 @@
     - 'date_time'
     - 'time_date'
     - 'time_utc'
-    - 'beat'
 - platform: cert_expiry
   host: !secret cert_url
   port: 443
@@ -114,3 +113,13 @@
 - platform: tautulli
   api_key: !secret tautulli_api_key
   host: !secret tautulli_host
+- platform: pfsense_gateways
+  host: !secret pfsense_host
+  name: pfSense Gateway
+  key: !secret pfsense_key
+  monitored_gateway_interfaces:
+    - wan
+    - lan
+    - opt1
+    - opt2
+    - opt3

@@ -35,8 +35,6 @@ http:
      - 104.24.0.0/14
      - 172.64.0.0/13
      - 131.0.72.0/22
-discovery:
-
 mobile_app:
 
 conversation:
@@ -265,8 +263,3 @@ downloader:
 
 device_tracker: !include_dir_list device_tracker/
 binary_sensor: !include_dir_merge_list binary_sensors/
-
-opnsense:
-  url: !secret opnsense_url
-  api_secret: !secret opnsense_secret
-  api_key: !secret opnsense_key
