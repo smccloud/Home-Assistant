@@ -258,3 +258,5 @@ ios:
 
 device_tracker: !include_dir_list device_tracker/
 binary_sensor: !include_dir_merge_list binary_sensors/
+
+powercalc:
