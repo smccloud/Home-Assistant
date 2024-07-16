@@ -139,8 +139,40 @@ input_datetime:
     has_time: true
   bedtime:
     has_time: true
+  workday_start:
+    has_time: true
+  workday_end:
+    has_time: true
 
 input_number:
+  garage_ac_set_point_low:
+    name: "Garage AC Set Point Low"
+    mode: box
+    initial: 73
+    min: 60
+    max: 80
+    step: 1
+  garage_ac_set_point_high:
+    name: "Garage AC Set Point High"
+    mode: box
+    initial: 78
+    min: 60
+    max: 80
+    step: 1
+  garage_heat_set_point_low:
+    name: "Garage Heat Set Point Low"
+    mode: box
+    initial: 66
+    min: 60
+    max: 80
+    step: 1
+  garage_heat_set_point_high:
+    name: "Garage Heat Set Point High"
+    mode: box
+    initial: 71
+    min: 60
+    max: 80
+    step: 1
   ac_set_point_home_day:
     name: "AC Set Point Home Day"
     mode: box
@@ -158,14 +190,14 @@ input_number:
   ac_set_point_home_night:
     name: "AC Set Point Home Night"
     mode: box
-    initial: 74
+    initial: 75
     min: 60
     max: 80
     step: 1
   ac_set_point_away_night:
     name: "AC Set Point Away Night"
     mode: box
-    initial: 78
+    initial: 79
     min: 60
     max: 80
     step: 1
