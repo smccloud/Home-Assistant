@@ -1,5 +1,5 @@
 alias: Garage Heat Set Night
-initial_state: True
+initial_state: False
 trigger:
   platform: time
   at: input_datetime.workday_end

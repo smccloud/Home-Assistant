@@ -1,5 +1,5 @@
 alias: Garage AC Set Morning
-initial_state: True
+initial_state: False
 trigger:
   platform: time
   at: input_datetime.workday_start
