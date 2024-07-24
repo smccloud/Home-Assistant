@@ -3,7 +3,9 @@ initial_state: True
 trigger:
   platform: state
   entity_id: light.downstairs_hallway
-  from: "off"
+  from:
+    - "unknown"
+    - "unavailable"
   to: "on"
 condition:
   condition: time
