@@ -143,6 +143,8 @@ input_datetime:
     has_time: true
   workday_end:
     has_time: true
+  downstairshallwaynightlight:
+    has_time: true
 
 input_number:
   garage_ac_set_point_low:
