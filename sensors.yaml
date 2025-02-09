@@ -5,9 +5,6 @@
     - 'date_time'
     - 'time_date'
     - 'time_utc'
-- platform: cert_expiry
-  host: !secret cert_url
-  port: 443
 - platform: template
   sensors:
     hvac_set_temp:

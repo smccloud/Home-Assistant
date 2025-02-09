@@ -5,7 +5,7 @@ homeassistant:
   latitude: !secret home_latitude
   longitude: !secret home_longitude
   elevation: !secret home_elevation
-  unit_system: imperial
+  unit_system: us_customary
   time_zone: America/Chicago
   customize: !include customize.yaml
   packages: !include_dir_named packages
@@ -100,9 +100,6 @@ zone:
   icon: mdi:home
 
 notify: !include notifications.yaml
-
-homekit:
-  auto_start: False
 
 switch: !include switches.yaml
 
