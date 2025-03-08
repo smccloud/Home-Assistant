@@ -10,7 +10,7 @@ trigger:
 condition:
   - condition: time
     after: "07:00:00"
-    before: "19:59:00"
+    before: "19:45:00"
   - condition: template # run only once every 15 minutes
     value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('automation.downstairs_hallway_resett', 'last_triggered')) |int(0) ) > 900 }}"
 action:
