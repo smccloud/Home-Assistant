@@ -10,5 +10,5 @@ condition:
 action:
   - service: light.turn_on
     data:
-      entity_id: light.downstairs_hallway
+      entity_id: light.hue_white_lamp_3_2
       brightness_pct: 3

@@ -1,4 +1,4 @@
-alias: Bedtime
+alias: "Bedtime Boy's Room"
 initial_state: True
 trigger:
   platform: time
@@ -12,11 +12,3 @@ action:
     data:
       entity_id: light.boy_s_room
       brightness_pct: 10
-  - service: light.turn_on
-    data:
-      entity_id: group.masterbedroom
-      brightness_pct: 50
-      rgb_color:
-        - 0
-        - 0
-        - 0

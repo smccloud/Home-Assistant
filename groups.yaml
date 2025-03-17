@@ -53,5 +53,5 @@ masterbedroom:
   name: Master Bedroom
   icon: mdi:bed-queen
   entities:
-    - light.shaun_nightstand
-    - light.heidi_nightstand
+    - light.shaun_nightstand_2
+    - light.third_reality_inc_3rcb01057z
