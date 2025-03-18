@@ -1,0 +1,70 @@
+script:
+  master_bedroom:
+    conditions:
+    sequence:
+      condition: state
+        entity_id: group.bedtimephones
+        state: 'home'
+      trigger:
+        platform: time
+        at: input_datetime.bedtime
+      - alias: "Turn on Shaun's nightstand"
+        action: light.turn_on
+        target:
+          entity_id: light.shaun_nightstand_2
+     - alias: "Wait 100ms"
+       delay:
+         milliseconds: 100
+     - alias: "Set color and brightness of Shaun's nightstand"
+       action: light.turn_on
+       target:
+         entity_id: light.shaun_nightstand_2
+         data:
+           brightness_pct: 50
+           rgb_color:
+             - 0
+             - 0
+             - 0
+     - alias: "Wait 100ms"
+       delay:
+         milliseconds: 100
+     - alias: "Set color and brightness of Shaun's nightstand"
+       action: light.turn_on
+       target:
+         entity_id: light.shaun_nightstand_2
+         data:
+           brightness_pct: 50
+           rgb_color:
+             - 0
+             - 0
+             - 0
+      - alias: "Turn on Heidi's nightstand"
+        action: light.turn_on
+        target:
+          entity_id: light.third_reality_inc_3rcb01057z
+     - alias: "Wait 100ms"
+       delay:
+         milliseconds: 100
+     - alias: "Set color and brightness of Heidi's nightstand"
+       action: light.turn_on
+       target:
+         entity_id: light.third_reality_inc_3rcb01057z
+         data:
+           brightness_pct: 50
+           rgb_color:
+             - 0
+             - 0
+             - 0
+     - alias: "Wait 100ms"
+       delay:
+         milliseconds: 100
+     - alias: "Set color and brightness of Heidi's nightstand"
+        action: light.turn_on
+        target:
+          entity_id: light.third_reality_inc_3rcb01057z
+          data:
+            brightness_pct: 50
+            rgb_color:
+              - 0
+              - 0
+              - 0
