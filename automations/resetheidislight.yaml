@@ -9,12 +9,12 @@ condition:
       entity_id: 'group.bedtimephones'
       state: 'home'
     - condition: state
-      entity_id: light.shaun_nightstand_2
+      entity_id: light.heidi_nightstand_2
       state: 'on'
 action:
   - service: light.turn_on
     data:
-      entity_id: light.third_reality_inc_3rcb01057z
+      entity_id: light.heidi_nightstand_2
       brightness_pct: 30
       rgb_color:
         - 0

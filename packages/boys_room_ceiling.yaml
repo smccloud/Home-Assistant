@@ -50,7 +50,7 @@ script:
             light.turn_on
           {% endif %}
         data_template:
-          entity_id: light.boy_s_room
+          entity_id: group.boysroomlight
           brightness: >-
             {% set time = now().strftime('%H.%M')|float %}
             {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}

@@ -1,11 +1,12 @@
 climate:
   name: Climate
   entities:
-    - sensor.boysroomtemp
-    - sensor.boysroomhumidity
-    - sensor.living_room_temp
-    - sensor.living_room_humidity
-    - climate.sensi
+    - sensor.boy_s_room_climate_humidity
+    - sensor.boy_s_room_climate_temperature
+    - sensor.master_bedroom_climate_humidity
+    - sensor.master_bedroom_climate_temperature
+    - sensor.z_wave_thermostat_air_temperature
+    - sensor.z_wave_thermostat_humidity_2
 devicetrackers:
   name: Device tracker groups
   icon: mdi:cellphone
@@ -17,17 +18,11 @@ thermostatdevices:
   entities:
     - device_tracker.pixel_8_6
     - device_tracker.sm_f741u
-#    - device_tracker.device_name_1
-#    - device_tracker.device_name_2
-#    - device_tracker.device_name_3
 bedtimephones:
   name: Bedtime Devices
   entities:
     - device_tracker.pixel_8_6
     - device_tracker.sm_f741u
-#    - device_tracker.device_name_1
-#    - device_tracker.device_name_2
-#    - device_tracker.device_name_3
 automations:
   name: Automations
   icon: mdi:home-automation
@@ -54,4 +49,10 @@ masterbedroom:
   icon: mdi:bed-queen
   entities:
     - light.shaun_nightstand_2
-    - light.third_reality_inc_3rcb01057z
+    - light.heidi_nightstand_2
+boysroomlight:
+  name: Boy's Room Lights
+  icon: mdi:lightbulb
+  entities:
+    - light.boy_s_room_light_one
+    - light.boy_s_room_light_two
