@@ -44,7 +44,7 @@ script:
           {% set time = now().strftime('%H.%M')|float %}
           {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
           {% set evening = states.input_datetime.boys_room_evening.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
-          {% if (button in limited_buttons and not morning <= time < evening) or is_state('light.boy_s_room', 'on') %}
+          {% if (button in limited_buttons and not morning <= time < evening) or is_state('group.boysroomlight', 'on') %}
             script.light_turn_off_proxy
           {% else %}
             light.turn_on
