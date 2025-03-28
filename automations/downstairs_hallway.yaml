@@ -2,10 +2,10 @@ alias: 'Downstairs Hallway'
 initial_state: true
 triggers:
   - trigger: mqtt
-    topic: "zigbee2mqtt/Hallway Button/action"
+    topic: "zigbee2mqtt/Aqara Button 1/action"
     payload: "single"
   - trigger: mqtt
-    topic: "zigbee2mqtt/Stairway Button/action"
+    topic: "zigbee2mqtt/Aqara Button 2/action"
     payload: "single"
 action:
   - service: light.toggle
