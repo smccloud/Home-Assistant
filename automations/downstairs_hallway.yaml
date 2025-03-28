@@ -1,0 +1,13 @@
+alias: 'Downstairs Hallway'
+initial_state: true
+triggers:
+  - trigger: mqtt
+    topic: "zigbee2mqtt/Hallway Button/action"
+    payload: "single"
+  - trigger: mqtt
+    topic: "zigbee2mqtt/Stairway Button/action"
+    payload: "single"
+action:
+  - service: light.toggle
+    data:
+      entity_id: light.downstairs_hallway
