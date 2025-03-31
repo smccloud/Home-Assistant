@@ -1,4 +1,4 @@
-alias: 'Downstairs Hallway'
+alias: 'Downstairs Hallway Turn Off'
 initial_state: true
 triggers:
   - trigger: mqtt
@@ -7,7 +7,14 @@ triggers:
   - trigger: mqtt
     topic: "zigbee2mqtt/Aqara Button 2/action"
     payload: "single"
-action:
-  - service: light.toggle
-    data:
+conditions:
+  - and:
+    - condition: state
       entity_id: light.downstairs_hallway
+      state: on
+action:
+  - service: light.turn_off
+    target:
+      entity_id: light.downstairs_hallway
+    data:
+      brightness: 8
