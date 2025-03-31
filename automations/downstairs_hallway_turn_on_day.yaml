@@ -9,9 +9,7 @@ triggers:
     payload: "single"
 conditions:
   - and:
-    - condition: state
-      entity_id: light.downstairs_hallway
-      state: off
+    - "{{ is_state('light.downstairs_hallway', 'off') }}"
     - condition: time
       after: input_datetime.boys_room_morning
       before: input_datetime.downstairshallwaynightlight

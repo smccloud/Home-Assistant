@@ -8,13 +8,8 @@ triggers:
     topic: "zigbee2mqtt/Aqara Button 2/action"
     payload: "single"
 conditions:
-  - and:
-    - condition: state
-      entity_id: light.downstairs_hallway
-      state: on
+  - "{{ is_state('light.downstairs_hallway', 'on') }}"
 action:
   - service: light.turn_off
     target:
       entity_id: light.downstairs_hallway
-    data:
-      brightness: 8
