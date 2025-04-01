@@ -40,7 +40,7 @@ script:
     alias: "Boy's Room Ceiling"
     sequence:
       - service_template: >-
-          {% set limited_buttons = ['kids_button'] %}
+          {% set limited_buttons = ['kidsbutton'] %}
           {% set time = now().strftime('%H.%M')|float %}
           {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
           {% set evening = states.input_datetime.boys_room_evening.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
@@ -65,4 +65,4 @@ script:
     sequence:
       - service: light.turn_off
         data_template:
-          entity_id: "{{ entity_id }}"
+          entity_id: group.boysroomlight

@@ -54,5 +54,5 @@ boysroomlight:
   name: Boy's Room Lights
   icon: mdi:lightbulb
   entities:
-    - light.boy_s_room_light_one
-    - light.boy_s_room_light_two
+    - light.hue_white_lamp_1_2
+    - light.hue_white_lamp_1_3
