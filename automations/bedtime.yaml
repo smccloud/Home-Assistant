@@ -14,7 +14,7 @@ action:
       brightness_pct: 10
   - service: light.turn_on
     data:
-      entity_id: light.shaun_nightstand
+      entity_id: light.shaun_nightstand_2
       brightness_pct: 50
       rgb_color:
         - 255
@@ -22,7 +22,7 @@ action:
         - 255
   - service: light.turn_on
     data:
-      entity_id: light.heidi_nightstand
+      entity_id: light.heidi_nightstand_2
       brightness_pct: 50
       rgb_color:
         - 255

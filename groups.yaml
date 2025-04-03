@@ -48,11 +48,11 @@ masterbedroom:
   name: Master Bedroom
   icon: mdi:bed-queen
   entities:
-    - light.shaun_nightstand
-    - light.heidi_nightstand
+    - light.shaun_nightstand_2
+    - light.heidi_nightstand_2
 boysroomlight:
   name: Boy's Room Lights
   icon: mdi:lightbulb
   entities:
-    - light.hue_white_lamp_1_2
-    - light.hue_white_lamp_1_3
+    - light.boy_s_room_light_one
+    - light.boy_s_room_light_two
