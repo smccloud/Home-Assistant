@@ -128,7 +128,7 @@
   name: AXE1
   unit_of_measurement: "F"
   unique_id: 1234.0
-  value_template: "{{((value | float) / 100 * 1.8 + 32) | float}}"
+  value_template: "{{((value | float) / 100 * 1.8 + 32) | float | round(2)}}"
 - platform: snmp
   host: 172.16.6.27
   community: mccloud
@@ -137,4 +137,4 @@
   name: AXE1
   unit_of_measurement: "%RH"
   unique_id: 1234.1
-  value_template: "{{((value | float) / 1000) | float}}"
+  value_template: "{{((value | float) / 1000) | float | round(2)}}"
