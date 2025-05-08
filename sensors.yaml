@@ -135,6 +135,6 @@
   baseoid: 1.3.6.1.2.1.99.1.1.2.4.0
   device_class: Humidity
   name: AXE1
-  unit_of_measurement: "%RH"
+  unit_of_measurement: "%"
   unique_id: 1234.1
   value_template: "{{((value | float) / 1000) | float | round(2)}}"
