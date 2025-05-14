@@ -42,7 +42,8 @@ conversation:
 sun:
 
 recorder:
-  purge_keep_days: 14
+  db_url: !secret mariadb_url
+  purge_keep_days: 60
   auto_purge : true
   auto_repack: true
 
@@ -79,6 +80,14 @@ mqtt:
     - name: garagehumidity
       state_topic: "garage/humidity"
       unit_of_measurement: "%"
+    - name: Zigbee2mqtt Networkmap
+      # if you change base_topic of Zigbee2mqtt, change state_topic accordingly
+      state_topic: zigbee2mqtt/bridge/response/networkmap
+      value_template: >-
+        {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+      # again, if you change base_topic of Zigbee2mqtt, change json_attributes_topic accordingly
+      json_attributes_topic: zigbee2mqtt/bridge/response/networkmap
+      json_attributes_template: "{{ value_json.data.value | tojson }}"
   switch:
     - name: boys_lamp
       state_topic: "stat/boysroom/POWER"
