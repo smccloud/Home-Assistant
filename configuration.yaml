@@ -136,6 +136,8 @@ ffmpeg:
 
 api:
 
+default_config:
+
 input_datetime:
   climate_night:
     has_time: true
@@ -150,6 +152,8 @@ input_datetime:
   workday_end:
     has_time: true
   downstairshallwaynightlight:
+    has_time: true
+  gardenwatertime:
     has_time: true
 
 input_number:
@@ -292,6 +296,20 @@ input_number:
     initial: 78
     min: 60
     max: 80
+    step: 1
+  garden_soil_moisture_level:
+    name: "Garden Soil Moisture Level"
+    mode: box
+    initial: 40
+    min: 0
+    max: 100
+    step: 1
+  length_of_time_to_water_the_garden:
+    name: "Length of Time to Water the Garden"
+    mode: box
+    initial: 30
+    min: 0
+    max: 60
     step: 1
 
 ios:

@@ -16,12 +16,12 @@ devicetrackers:
 thermostatdevices:
   name: Temperature Devices
   entities:
-    - device_tracker.pixel_8_6
+    - device_tracker.pixel_8
     - device_tracker.sm_f741u
 bedtimephones:
   name: Bedtime Devices
   entities:
-    - device_tracker.pixel_8_6
+    - device_tracker.pixel_8
     - device_tracker.sm_f741u
 automations:
   name: Automations

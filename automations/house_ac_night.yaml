@@ -1,19 +1,19 @@
-alias: Heat Set Night
+alias: AC Set Night
 initial_state: True
 trigger:
   platform: time
   at: input_datetime.climate_night
 condition:
   - condition: state
-    entity_id: climate.z_wave_thermostat
-    state: heat
+    entity_id: climate.thermostat
+    state: cool
 action:
   - service: climate.set_temperature
     data_template:
-      entity_id: climate.z_wave_thermostat
+      entity_id: climate.thermostat
       temperature: >
         {% if is_state('group.thermostatdevices', 'home') %}
-          {{ states('input_number.heat_set_point_home_night') }}
+          {{ states('input_number.ac_set_point_home_night') }}
         {% else %}
-          {{ states('input_number.heat_set_point_away_night') }}
+          {{ states('input_number.ac_set_point_away_night') }}
         {% endif %}

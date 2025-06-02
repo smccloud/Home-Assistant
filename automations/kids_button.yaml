@@ -2,8 +2,8 @@ alias: 'Kids Button'
 initial_state: true
 trigger:
   platform: mqtt
-  topic: "sonoff_bridge/kidsbutton"
-  payload: "toggle"
+  topic: "zigbee2mqtt/Kid's Button/action"
+  payload: "single"
 action:
   - service: script.boys_room_ceiling
     data:
