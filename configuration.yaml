@@ -314,7 +314,19 @@ input_number:
 
 ios:
 
-device_tracker: !include_dir_list device_tracker/
+device_tracker:
+  - platform: bluetooth_le_tracker
+    track_battery: true
+    interval_seconds: 60
+    new_device_defaults:
+      track_new_devices: true
 binary_sensor: !include_dir_merge_list binary_sensors/
 
 powercalc:
+
+influxdb:
+  api_version: 1
+  host: !secret influxdb_host
+  username: !secret influxdb_user
+  password: !secret influxdb_pass
+  database: !secret influxdb
