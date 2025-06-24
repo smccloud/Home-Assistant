@@ -1,0 +1,21 @@
+climate.ct101_cooling_1_2:
+  ignored: true
+  polling_intensity: 0
+climate.ct101_cooling_econ_2:
+  ignored: true
+  polling_intensity: 0
+climate.ct101_cooling_econ:
+  ignored: true
+  polling_intensity: 0
+climate.ct101_heating_1_2:
+  ignored: true
+  polling_intensity: 0
+climate.ct101_heating_econ_2:
+  ignored: true
+  polling_intensity: 0
+climate.ct101_heating_econ:
+  ignored: true
+  polling_intensity: 0
+sensor.ct101_temperature_2:
+  ignored: true
+  polling_intensity: 0

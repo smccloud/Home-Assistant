@@ -1,0 +1,18 @@
+alias: Downstairs Hallway Reset
+initial_state: True
+trigger:
+  platform: state
+  entity_id: light.downstairs_hallway
+  from:
+    - "unknown"
+    - "unavailable"
+  to: "on"
+condition:
+  condition: time
+  after: "07:00:00"
+  before: "19:45:00"
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.downstairs_hallway
+      brightness_pct: 100

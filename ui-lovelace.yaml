@@ -1,0 +1,205 @@
+title: Home
+resources:
+  - url: /local/dual-thermostat/dual-thermostat.js?v=1
+    type: js
+views:
+  - badges: []
+    cards:
+      - entities:
+          - switch.heidi_nightstand
+          - switch.shaun_nightstand
+          - switch.boys_lamp
+        show_header_toggle: true
+        title: All switches
+        type: entities
+      - entities:
+          - entity: light.boy_s_room
+          - entity: light.crawlspace
+        show_header_toggle: true
+        title: All lights
+        type: entities
+      - entities:
+          - entity: sensor.ssl_certificate_expiry
+        show_header_toggle: false
+        title: Home Assistant Info
+        type: entities
+      - entities:
+          - entity: sensor.boysroomtemp
+          - entity: sensor.boysroomhumidity
+          - entity: sensor.living_room_temp
+          - entity: sensor.living_room_humidity
+        show_header_toggle: false
+        title: Climate
+        type: entities
+      - entity: climate.sensi
+        type: thermostat
+      - entity: camera.boysroom
+        type: picture-entity
+      - entities:
+          - entity: sensor.owm_temperature
+            name: Temperature
+          - entity: sensor.owm_humidity
+            name: Humidity
+        show_header_toggle: false
+        title: Outside Weather
+        type: entities
+    icon: 'mdi:home'
+    path: default_view
+    title: Default View
+  - badges: []
+    cards:
+      - entities:
+          - entity: device_tracker.smccloud_g7_2
+          - entity: device_tracker.hmccloud_af05b130_ea4b_424e_9eaa_fb79f0b4a0ef_2
+          - entity: device_tracker.heidis_iphone
+          - entity: device_tracker.g7_thinq
+        show_header_toggle: false
+        title: Temperature Devices
+        type: entities
+      - entities:
+          - entity: device_tracker.heidis_iphone
+          - entity: device_tracker.g7_thinq
+        show_header_toggle: false
+        title: Bedtime Devices
+        type: entities
+    icon: 'mdi:cellphone'
+    path: devicetrackers
+    title: Device tracker groups
+  - badges: []
+    cards:
+      - entities:
+          - entity: automation.bedtime
+          - entity: automation.heidi_nightstand_failsafe_off
+          - entity: automation.set_theme_at_startup
+          - entity: automation.update_wink_data
+          - entity: automation.ring
+          - entity: automation.crawl_space_button
+          - entity: automation.kids_button
+          - entity: automation.master_button
+        show_header_toggle: false
+        title: Automations
+        type: entities
+      - entities:
+          - entity: automation.ac_set_away
+          - entity: automation.ac_set_home
+          - entity: automation.ac_set_morning
+          - entity: automation.ac_set_night
+          - entity: automation.auto_set_away
+          - entity: automation.auto_set_home
+          - entity: automation.auto_set_morning
+          - entity: automation.auto_set_night
+          - entity: automation.heat_set_away
+          - entity: automation.heat_set_home
+          - entity: automation.heat_set_morning
+          - entity: automation.heat_set_night
+        title: Climate Automations
+        type: entities
+      - entities:
+          - entity: automation.ct101_ac_set_away
+          - entity: automation.ct101_ac_set_home
+          - entity: automation.ct101_ac_set_morning
+          - entity: automation.ct101_ac_set_night
+          - entity: automation.ct101_auto_set_away
+          - entity: automation.ct101_auto_set_home
+          - entity: automation.ct101_auto_set_morning
+          - entity: automation.ct101_auto_set_night
+          - entity: automation.ct101_heat_set_away
+          - entity: automation.ct101_heat_set_home
+          - entity: automation.ct101_heat_set_morning
+          - entity: automation.ct101_heat_set_night
+        title: CT101 Climate Automations
+        type: entities
+    icon: 'mdi:home-automation'
+    path: automations
+    title: Automations
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.ring_front_door_battery
+          - entity: sensor.ring_front_door_last_activity
+          - entity: sensor.ring_front_door_last_ding
+          - entity: sensor.ring_front_door_last_motion
+          - entity: sensor.ring_front_door_volume
+          - entity: sensor.ring_front_door_wifi_signal_category
+          - entity: sensor.ring_front_door_wifi_signal_strength
+        show_header_toggle: false
+        title: Front Door
+        type: entities
+    icon: 'mdi:doorbell-video'
+    title: Ring
+  - badges: []
+    cards:
+      - entity: camera.boysroom
+        type: picture-entity
+      - entities:
+          - entity: camera.front_door
+        show_header_toggle: false
+        title: Front Door
+        type: entities
+    icon: 'mdi:cctv'
+    path: cameras
+    title: Cameras
+  - badges: []
+    cards:
+      - entity: sensor.owm_condition
+        type: sensor
+      - entity: sensor.owm_cloud_coverage
+        graph: line
+        type: sensor
+      - entity: sensor.owm_humidity
+        graph: line
+        type: sensor
+      - entity: sensor.owm_pressure
+        graph: line
+        type: sensor
+      - entity: sensor.owm_temperature
+        graph: line
+        type: sensor
+      - entity: sensor.owm_wind_speed
+        graph: line
+        type: sensor
+      - entity: sensor.owm_wind_bearing
+        type: sensor
+    icon: 'mdi:weather-sunny'
+    title: Weather
+  - badges: []
+    cards:
+      - entities:
+          - input_datetime.boys_room_evening
+          - input_datetime.boys_room_morning
+        show_header_toggle: false
+        title: Times
+        type: entities
+      - entities:
+          - entity: input_number.boys_room_limited_brightness
+          - entity: input_text.ac_set_point_home
+          - entity: input_text.ac_set_point_away
+          - entity: input_text.heat_set_point_home
+          - entity: input_text.heat_set_point_away
+          - entity: input_text.auto_low_set_point_home
+          - entity: input_text.auto_high_set_point_home
+          - entity: input_text.auto_low_set_point_away
+          - entity: input_text.auto_high_set_point_away
+        show_header_toggle: false
+        title: Numbers
+        type: entities
+    icon: 'mdi:settings'
+    path: settings
+    title: Settings
+  - badges: []
+    cards:
+      - type: 'custom:dual-thermostat'
+        name: CT101
+        entities:
+          - entity: >-
+              climate.radio_thermostat_company_of_america_ct101_thermostat_cooling_1
+            type: cool
+          - entity: >-
+              climate.radio_thermostat_company_of_america_ct101_thermostat_heating_1
+            type: heat
+        fan_control: true
+        min_slider: 60
+        max_slider: 80
+    path: testing
+    title: Testing
+

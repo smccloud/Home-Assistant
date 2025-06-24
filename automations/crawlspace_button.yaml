@@ -1,0 +1,10 @@
+alias: 'Crawl Space Button'
+initial_state: true
+trigger:
+  platform: mqtt
+  topic: "sonoff_bridge/crawlspace"
+  payload: "toggle"
+action:
+  - service: light.toggle
+    data:
+      entity_id: light.crawlspace

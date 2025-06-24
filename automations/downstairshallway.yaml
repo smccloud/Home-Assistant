@@ -1,0 +1,14 @@
+alias: Downstairs Hallway Nightlight Mode
+initial_state: True
+trigger:
+  platform: time
+  at: input_datetime.downstairshallwaynightlight
+condition:
+  condition: state
+  entity_id: 'group.bedtimephones'
+  state: 'home'
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.downstairs_hallway
+      brightness_pct: 3

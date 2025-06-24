@@ -1,0 +1,22 @@
+alias: "Reset Shaun's bedroom light"
+initial_state: True
+trigger:
+  platform: time
+  at: input_datetime.resetlights
+condition:
+  - and:
+    - condition: state
+      entity_id: 'group.bedtimephones'
+      state: 'home'
+    - condition: state
+      entity_id: light.shaun_nightstand
+      state: 'on'
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.shaun_nightstand
+      brightness_pct: 30
+      rgb_color:
+        - 0
+        - 0
+        - 255

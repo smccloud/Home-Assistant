@@ -1,0 +1,12 @@
+- name: gmail
+  platform: smtp
+  server: smtp.gmail.com
+  port: 587
+  timeout: 15
+  sender: !secret gmail_address
+  encryption: starttls
+  username: !secret gmail_address
+  password: !secret gmail_password
+  recipient:
+    - !secret gmail_address
+  sender_name: McCloud Home Assistant

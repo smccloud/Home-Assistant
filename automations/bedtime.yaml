@@ -1,0 +1,34 @@
+alias: Bedtime
+initial_state: True
+trigger:
+  platform: time
+  at: input_datetime.bedtime
+condition:
+  condition: state
+  entity_id: group.bedtimephones
+  state: 'home'
+action:
+  - service: light.turn_on
+    data:
+      entity_id: group.boysroomlight
+      brightness_pct: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.shaun_nightstand
+      brightness_pct: 50
+      rgb_color:
+        - 255
+        - 255
+        - 255
+  - service: light.turn_on
+    data:
+      entity_id: light.heidi_nightstand
+      brightness_pct: 50
+      rgb_color:
+        - 255
+        - 255
+        - 255
+  - service: light.turn_on
+    data:
+      entity_id: light.downstairs_hallway
+      brightness_pct: 100

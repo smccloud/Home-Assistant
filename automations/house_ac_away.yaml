@@ -1,0 +1,21 @@
+alias: AC Set Away
+initial_state: True
+trigger:
+  platform: state
+  entity_id: group.thermostatdevices
+  from: 'home'
+  to: 'not_home'
+condition:
+  - condition: state
+    entity_id: climate.thermostat
+    state: cool
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.thermostat
+      temperature: >
+        {% if '07:30' <= states('sensor.time') < '22:00' %}
+          {{ states('input_number.ac_set_point_away_day') }}
+        {% else %}
+          {{ states('input_number.ac_set_point_away_night') }}
+        {% endif %}

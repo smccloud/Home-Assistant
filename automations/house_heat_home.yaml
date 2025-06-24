@@ -1,0 +1,21 @@
+alias: Heat Set Home
+initial_state: True
+trigger:
+  platform: state
+  entity_id: group.thermostatdevices
+  from: 'not_home'
+  to: 'home'
+condition:
+  - condition: state
+    entity_id: climate.thermostat
+    state: heat
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.thermostat
+      temperature: >
+        {% if '07:30' <= states('sensor.time') < '22:00' %}
+          {{ states('input_number.heat_set_point_home_day') }}
+        {% else %}
+          {{ states('input_number.heat_set_point_home_night') }}
+        {% endif %}

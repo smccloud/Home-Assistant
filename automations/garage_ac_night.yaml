@@ -1,0 +1,19 @@
+alias: Garage AC Set Night
+initial_state: False
+trigger:
+  platform: time
+  at: input_datetime.workday_end
+condition:
+  - condition: state
+    entity_id: climate.garage_hvac
+    state: cool
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.garage_hvac
+      temperature: >
+        {% if(is_state('group.thermostatdevices', 'home') and is_state('binary_sensor.workday_sensor', 'on')) %}
+          {{ states('input_number.garage_ac_set_point_high') }}
+        {% else %}
+          {{ states('input_number.garage_ac_set_point_high') }}
+        {% endif %}

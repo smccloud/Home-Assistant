@@ -1,0 +1,15 @@
+alias: Ring Ding Download
+initial_state: True
+trigger:
+- platform: state
+#  entity_id: binary_sensor.front_door_ding
+  entity_id: event.front_door_ding
+  from: 'off'
+  to: 'on'
+action:
+- delay: 300
+- service: downloader.download_file
+  data:
+    url: "{{ state_attr('camera.front_door_2', 'video_url') }}"
+    subdir: "press"
+    filename: "{{ now().strftime('%H-%M-%S')  }}.mpg"

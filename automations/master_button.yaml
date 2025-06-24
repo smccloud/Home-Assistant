@@ -1,0 +1,10 @@
+alias: 'Master Button'
+initial_state: true
+trigger:
+  platform: mqtt
+  topic: "zigbee2mqtt/Master Button/action"
+  payload: "single"
+action:
+  - service: script.boys_room_ceiling
+    data:
+      button: "master_button"

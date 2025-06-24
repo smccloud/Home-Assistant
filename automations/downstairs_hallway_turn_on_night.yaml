@@ -1,0 +1,21 @@
+alias: 'Downstairs Hallway Turn On Nighttime'
+initial_state: true
+triggers:
+  - trigger: mqtt
+    topic: "zigbee2mqtt/Aqara Button 1/action"
+    payload: "single"
+  - trigger: mqtt
+    topic: "zigbee2mqtt/Aqara Button 2/action"
+    payload: "single"
+conditions:
+  - and:
+    - "{{ is_state('light.downstairs_hallway', 'off') }}"
+    - condition: time
+      after: input_datetime.downstairshallwaynightlight
+      before: input_datetime.boys_room_morning
+action:
+  - service: light.turn_on
+    target:
+      entity_id: light.downstairs_hallway
+    data:
+      brightness: 8

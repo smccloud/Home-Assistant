@@ -1,0 +1,68 @@
+################################################################
+## Packages / Boy's Room Brightness
+##
+## @description Time and button restricted light control
+## @component   input_datetime, input_number, light, script
+## @license     MIT
+## @author      Dale Higgs <@dale3h>
+################################################################
+
+################################################
+## Input Datetime
+################################################
+
+input_datetime:
+  boys_room_morning:
+    name: "Boy's Room Morning"
+    has_time: true
+
+  boys_room_evening:
+    name: "Boy's Room Evening"
+    has_time: true
+
+################################################
+## Input Number
+################################################
+
+input_number:
+  boys_room_limited_brightness:
+    name: "Boy's Room Limited Brightness"
+    min: 1
+    max: 100
+    step: 1
+
+################################################
+## Script
+################################################
+
+script:
+  boys_room_ceiling:
+    alias: "Boy's Room Ceiling"
+    sequence:
+      - service_template: >-
+          {% set limited_buttons = ['kidsbutton'] %}
+          {% set time = now().strftime('%H.%M')|float %}
+          {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
+          {% set evening = states.input_datetime.boys_room_evening.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
+          {% if (button in limited_buttons and not morning <= time < evening) or is_state('group.boysroomlight', 'on') %}
+            script.light_turn_off_proxy
+          {% else %}
+            light.turn_on
+          {% endif %}
+        data_template:
+          entity_id: group.boysroomlight
+          brightness: >-
+            {% set time = now().strftime('%H.%M')|float %}
+            {% set morning = states.input_datetime.boys_room_morning.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
+            {% set evening = states.input_datetime.boys_room_evening.attributes.timestamp|int|timestamp_custom('%H.%M', false)|float %}
+            {% if morning < time < evening %}
+              255
+            {% else %}
+              {{ (255 * (states('input_number.boys_room_limited_brightness')|float / 100))|round }}
+            {% endif %}
+  light_turn_off_proxy:
+    alias: "Light Proxy"
+    sequence:
+      - service: light.turn_off
+        data_template:
+          entity_id: group.boysroomlight

@@ -1,0 +1,10 @@
+alias: 'Outside Lights Morning Off'
+initial_state: true
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: "+00:30:00"
+action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.in_wall_toggle_switch_qfsw_500s

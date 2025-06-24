@@ -1,0 +1,19 @@
+alias: AC Set Morning
+initial_state: True
+trigger:
+  platform: time
+  at: input_datetime.climate_morning
+condition:
+  - condition: state
+    entity_id: climate.thermostat
+    state: cool
+action:
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.thermostat
+      temperature: >
+        {% if is_state('group.thermostatdevices', 'home') %}
+          {{ states('input_number.ac_set_point_home_day') }}
+        {% else %}
+          {{ states('input_number.ac_set_point_away_day') }}
+        {% endif %}

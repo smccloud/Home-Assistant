@@ -1,0 +1,58 @@
+climate:
+  name: Climate
+  entities:
+    - sensor.boy_s_room_climate_humidity
+    - sensor.boy_s_room_climate_temperature
+    - sensor.master_bedroom_climate_humidity
+    - sensor.master_bedroom_climate_temperature
+    - sensor.z_wave_thermostat_air_temperature
+    - sensor.z_wave_thermostat_humidity_2
+devicetrackers:
+  name: Device tracker groups
+  icon: mdi:cellphone
+  entities:
+    - group.thermostatdevices
+    - group.bedtimephones
+thermostatdevices:
+  name: Temperature Devices
+  entities:
+    - device_tracker.pixel_8
+    - device_tracker.sm_f741u
+bedtimephones:
+  name: Bedtime Devices
+  entities:
+    - device_tracker.pixel_8
+    - device_tracker.sm_f741u
+automations:
+  name: Automations
+  icon: mdi:home-automation
+  entities:
+     - group.all_automations
+cameras:
+  name: Cameras
+  icon: mdi:cctv
+  entities:
+    - camera.boysroom
+version:
+  name: Server info
+  entities:
+    - sensor.ssl_certificate_expiry
+boysroom:
+  name: Boys Room Settings
+  icon: mdi:settings
+  entities:
+    - input_datetime.boys_room_evening
+    - input_datetime.boys_room_morning
+    - input_number.boys_room_limited_brightness
+masterbedroom:
+  name: Master Bedroom
+  icon: mdi:bed-queen
+  entities:
+    - light.shaun_nightstand
+    - light.heidi_nightstand
+boysroomlight:
+  name: Boy's Room Lights
+  icon: mdi:lightbulb
+  entities:
+    - light.boy_s_room_light_one
+    - light.boy_s_room_light_two

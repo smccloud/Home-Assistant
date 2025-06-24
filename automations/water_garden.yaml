@@ -1,0 +1,17 @@
+alias: "Water Garden"
+initial_state: True
+trigger:
+  platform: time
+  at: input_datetime.gardenwatertime
+conditions: "{{ states('sensor.unknown_device_soilmoisture1') | int <= states('input_number.garden_soil_moisture_level') | int and (states('sensor.openweathermap_condition') != 'pouring' or states('sensor.openweathermap_condition') != 'pouring' or 'rainy' or states('sensor.openweathermap_condition') != 'pouring' or 'snowy-rainy') }}"
+actions:
+  - action: number.set_value
+    target:
+      entity_id: number.garden_sprinkler_irrigation_target
+    data:
+      value: "{{ states('input_number.length_of_time_to_water_the_garden') | int * 60 }}"
+  - delay:
+      seconds: 5
+  - action: switch.turn_on
+    data:
+      entity_id: switch.garden_sprinkler_state

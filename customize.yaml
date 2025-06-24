@@ -1,0 +1,53 @@
+device_tracker.b0a73752458b:
+  friendly_name: Bedroom Roku
+device_tracker.b8a1753c14e5:
+  friendly_name: Living Room Roku
+sensor.yr_symbol:
+  friendly_name: Weather
+device_tracker.janesiphone:
+  friendly_name: Jane’s iPhone
+group.all_switches:
+  hidden: false
+  friendly_name: All switches
+group.all_automations:
+  hidden: false
+  friendly_name: All automations
+group.all_scripts:
+  hidden: false
+  friendly_name: All scripts
+sensor.boysroomtemp:
+  friendly_name: Boy's room temperature
+sensor.boysroomhumidity:
+  friendly_name: Boy's room humidity
+switch.boys_lamp:
+  friendly_name: Boy's room lamp
+camera.boysroom:
+  friendly_name: Boy's room
+group.all_cameras:
+  hidden: false
+  friendly_name: All cameras
+group.version:
+  friendly_name: Home Assistant Info
+group.all_lights:
+  hidden: false
+  friendly_name: All lights
+sensor.furnacefilter:
+  friendly_name: Furnace filter
+light.boys_room:
+  friendly_name: Boy's Room
+light.hue_white_lamp_1:
+  friendly_name: BRLO
+  hidden: true
+light.hue_white_lamp_2:
+  friendly_name: BRLT
+  hidden: true
+light.hue_white_lamp_3:
+  hidden: true
+sensor.ssl_certificate_expiry:
+  friendly_name: SSL Certification Expiration
+device_tracker.nmap_tracker_dc_b5_4f_5f_41_f0:
+  friendly_name: Shaun's iPhone
+sensor.mechanicalroomtemp:
+  friendly_name: Mechanical Room Temperature
+sensor.mechanicalroomhumidity:
+  friendly_name: Mechanical Room Humidity
