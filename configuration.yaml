@@ -202,14 +202,14 @@ input_number:
   ac_set_point_home_night:
     name: "AC Set Point Home Night"
     mode: box
-    initial: 75
+    initial: 73
     min: 60
     max: 80
     step: 1
   ac_set_point_away_night:
     name: "AC Set Point Away Night"
     mode: box
-    initial: 79
+    initial: 75
     min: 60
     max: 80
     step: 1
