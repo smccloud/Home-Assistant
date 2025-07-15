@@ -1,6 +1,6 @@
 substitutions:
-  name: living-room-bluetooth-proxy
-  friendly_name: Living Room Bluetooth Proxy
+  name: boys-room-bluetooth-proxy
+  friendly_name: Boy's Room Bluetooth Proxy
 packages:
   esphome.bluetooth-proxy: github://esphome/bluetooth-proxies/esp32-generic/esp32-generic.yaml@main
 esphome:

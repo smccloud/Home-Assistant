@@ -56,3 +56,21 @@ boysroomlight:
   entities:
     - light.boy_s_room_light_one
     - light.boy_s_room_light_two
+living_room_bluetooth_proxy:
+  name: Living Room Bluetooth Proxy
+  icon: mdi:bluetooth
+  entities:
+    - binary_sensor.living_room_bluetooth_proxy_shaun_s_phone_ibeacon
+    - binary_sensor.living_room_bluetooth_proxy_heidi_s_phone_ibeacon
+master_bedroom_bluetooth_proxy:
+  name: Master Bedroom Bluetooth Proxy
+  icon: mdi:bluetooth
+  entities:
+    - binary_sensor.master_bedroom_bluetooth_proxy_shaun_s_phone_ibeacon
+    - binary_sensor.master_bedroom_bluetooth_proxy_heidi_s_phone_ibeacon
+boys_room_bluetooth_proxy:
+  name: Boy's Room Bluetooth Proxy
+  icon: mdi:bluetooth
+  entities:
+    - binary_sensor.boys_room_bluetooth_proxy_shaun_s_phone_ibeacon
+    - binary_sensor.boys_room_bluetooth_proxy_heidi_s_phone_ibeacon

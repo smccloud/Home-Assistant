@@ -3,7 +3,7 @@ initial_state: True
 trigger:
   platform: time
   at: input_datetime.gardenwatertime
-conditions: "{{ states('sensor.unknown_device_soilmoisture1') | int <= states('input_number.garden_soil_moisture_level') | int and (states('sensor.openweathermap_condition') != 'pouring' or states('sensor.openweathermap_condition') != 'pouring' or 'rainy' or states('sensor.openweathermap_condition') != 'pouring' or 'snowy-rainy') }}"
+conditions: "{{ states('sensor.unknown_device_soilmoisture1') | int <= states('input_number.garden_soil_moisture_level') | int and (states('sensor.openweathermap_condition') != 'pouring' and states('sensor.openweathermap_condition') != 'rainy' and states('sensor.openweathermap_condition') != 'snowy-rainy') }}"
 actions:
   - action: number.set_value
     target:

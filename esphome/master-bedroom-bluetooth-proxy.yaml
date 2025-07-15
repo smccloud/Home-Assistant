@@ -12,8 +12,8 @@ api:
     key: !secret api_key
 
 logger:
-  #level: VERY_VERBOSE
-  level: DEBUG
+  level: !secret loglevel
+  #level: DEBUG
 
 wifi:
   ssid: !secret wifi_ssid
@@ -40,4 +40,8 @@ binary_sensor:
   - platform: ble_presence
     name: !secret phone1_name
     ibeacon_uuid: !secret phone1_uuid
-    timeout: 30s
+    timeout: !secret timeout
+  - platform: ble_presence
+    name: !secret phone2_name
+    ibeacon_uuid: !secret phone2_uuid
+    timeout: !secret timeout
