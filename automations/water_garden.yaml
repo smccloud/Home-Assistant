@@ -1,5 +1,5 @@
 alias: "Water Garden"
-initial_state: True
+initial_state: False
 trigger:
   platform: time
   at: input_datetime.gardenwatertime

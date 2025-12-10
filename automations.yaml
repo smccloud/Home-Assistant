@@ -1,0 +1,9 @@
+- id: '1760556326837'
+  alias: New automation
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    hours: /1
+  conditions: []
+  actions: []
+  mode: single
