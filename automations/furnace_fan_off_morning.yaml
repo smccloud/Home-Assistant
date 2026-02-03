@@ -1,0 +1,9 @@
+alias: Furnace Fan Off Morning
+initial_state: True
+trigger:
+  platform: time
+  at: input_datetime.furnace_fan_off_morning
+action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.furnace_fan
