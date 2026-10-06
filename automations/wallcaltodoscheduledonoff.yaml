@@ -1,0 +1,26 @@
+alias: Wall Cal ToDo - Scheduled On/Off
+description: Turns switch.wallcaltodo_1 off and on at times set in input_datetime helpers
+mode: single
+triggers:
+  - trigger: time
+    at: input_datetime.wallcalltodoofftime
+    id: "off"
+  - trigger: time
+    at: input_datetime.wallcalltodoontime
+    id: "on"
+actions:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: "off"
+        sequence:
+          - action: switch.turn_off
+            target:
+              entity_id: switch.wallcaltodo_1
+      - conditions:
+          - condition: trigger
+            id: "on"
+        sequence:
+          - action: switch.turn_on
+            target:
+              entity_id: switch.wallcaltodo_1

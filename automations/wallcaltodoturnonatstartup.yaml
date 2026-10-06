@@ -1,0 +1,10 @@
+alias: Wall Cal ToDo 2 - Turn On at Startup
+description: Ensures switch.wallcaltodo_2 is on after Home Assistant boots
+mode: single
+triggers:
+  - trigger: homeassistant
+    event: start
+actions:
+  - action: switch.turn_on
+    target:
+      entity_id: switch.wallcaltodo_2
